@@ -7,25 +7,46 @@ import luggage.Equipaje;
 
 public class Avion {
 
+    public static boolean hayEquipajesParaAbordar(Bodega[] bodegas) {
+        if (bodegas == null) return false;
+        for (Bodega bodega : bodegas) {
+            if (!bodega.estaVacia()) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+//    private static void colocarMaletaEnVuelo(Equipaje maleta, BodegaAvion[] vuelos) {
+//        for (BodegaAvion vuelo : vuelos) {
+//            String destinoMaleta = maleta.destino();
+//            String destinoVuelo = vuelo.getDestino();
+//
+//            if (!destinoMaleta.equals(destinoVuelo)) {
+//                continue;
+//            }
+//
+//            boolean agregado = vuelo.agregarEquipaje(maleta);
+//            if (agregado) {
+//                break;
+//            }
+//        }
+//    }
+
     private static void colocarMaletaEnVuelo(Equipaje maleta, BodegaAvion[] vuelos) {
         for (BodegaAvion vuelo : vuelos) {
+
             String destinoMaleta = maleta.destino();
             String destinoVuelo = vuelo.getDestino();
 
-            if (!destinoMaleta.equals(destinoVuelo)) {
-                continue;
+            if (destinoMaleta.equals(destinoVuelo)) {
+                boolean agregado = vuelo.agregarEquipaje(maleta);
+                if (!agregado) {
+                    throw new IllegalStateException("No se pudo agregar la maleta al vuelo " + vuelo.getDestino() +
+                            " (límite alcanzado o categoría llena).");
+                }
+                break;
             }
-
-            boolean agregado = vuelo.agregarEquipaje(maleta);
-            if (agregado) {
-                break; // se logró asignar
-            }
-
-            // Si no se pudo agregar (por límites)
-            System.out.printf(
-                    "No se pudo asignar maleta de %s al vuelo con destino %s (límite alcanzado).%n",
-                    maleta.pasajero(), vuelo.getDestino()
-            );
         }
     }
 
