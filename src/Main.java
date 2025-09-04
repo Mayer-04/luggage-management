@@ -1,4 +1,7 @@
+import luggage.Bodega;
+import luggage.BodegaAvion;
 import luggage.ColaGeneral;
+import util.ColeccionBodegas;
 
 import java.util.Scanner;
 
@@ -8,8 +11,8 @@ public class Main {
             Seleccione una opción:
             ----------------------
             1) Registrar equipaje
-            2) Procesar equipaje
-            3) Clasificar equipaje
+            2) Registrar 500 equipajes
+            3) Procesar equipaje
             4) Abordar vuelo
             5) Desembarcar vuelo
             6) Lista de pasajeros
@@ -23,6 +26,10 @@ public class Main {
         var sc = new Scanner(System.in);
         var running = true;
         var interfaz = new Interfaz(colaGeneral, sc);
+
+
+        Bodega[] bodegas = ColeccionBodegas.obtenerBodegasDeEntrada();
+        BodegaAvion[] bodegasAvion = ColeccionBodegas.obtenerBodegasDeAviones();
 
         while (running) {
             System.out.println(MENU);
@@ -38,10 +45,13 @@ public class Main {
             }
 
             switch (option) {
-                case 1 -> {
-                    interfaz.registrarEquipaje();
-                    System.out.println("cola general: " + colaGeneral);
-                }
+                case 1 -> interfaz.registrarEquipaje();
+                case 2 -> interfaz.registrarMultiplesEquipajes(colaGeneral);
+                case 3 -> interfaz.procesarEquipajes(bodegas);
+                case 4 -> interfaz.abordarVuelo(bodegas, bodegasAvion);
+                case 5 -> interfaz.desembarcarVuelo(bodegasAvion);
+                case 6 -> interfaz.mostrarListaPasajeros(bodegasAvion);
+                case 7 -> interfaz.mostrarEstadisticas(bodegasAvion);
                 case 8 -> {
                     running = false;
                     System.out.println("Saliendo del programa...");

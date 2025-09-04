@@ -55,7 +55,7 @@ public class Avion {
      * <p>
      * Retorna una lista donde cada elemento es un arreglo de enteros [cantidad, peso].
      */
-    public static List<int[]> despacharVuelo(BodegaAvion[] vuelos) {
+    public static List<int[]> desembarcarVuelo(BodegaAvion[] vuelos) {
         // Lista de estadísticas de cada vuelo (cada estadística es un arreglo de 2 enteros).
         var estadisticasVuelos = new List<int[]>();
 

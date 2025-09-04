@@ -44,13 +44,13 @@
   {
     "pasajero": "Pasajero_8",
     "destino": "Medellín",
-    "categoriaTiquete": "S",
+    "categoriaTiquete": "M",
     "peso": 4
   },
   {
     "pasajero": "Pasajero_9",
     "destino": "Medellín",
-    "categoriaTiquete": "S",
+    "categoriaTiquete": "L",
     "peso": 5
   },
   {

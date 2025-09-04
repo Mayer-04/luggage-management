@@ -1,3 +1,5 @@
+package util;
+
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import luggage.Equipaje;
@@ -19,7 +21,7 @@ public class LuggageJsonReader {
 
     public List<Equipaje> cargarDatos() {
         try {
-            String json = Files.readString(path);
+            String json = Files.readString(path); // ejemplo.json
 
             // Definir el tipo de dato: Lista de Luggage
             Type listType = new TypeToken<List<Equipaje>>() {

@@ -7,11 +7,11 @@ public class QuickLuggageSorting {
 
     private static int prioridad(Equipaje maleta) {
         // Convertimos a mayúscula la "categoria del tiquete".
-        String categoriaTiquete = maleta.categoriaTiquete().toUpperCase();
+        String categoriaTiquete = maleta.categoriaTiquete();
         return switch (categoriaTiquete) {
-            case "L" -> 3;
+            case "L" -> 1;
             case "M" -> 2;
-            case "S" -> 1;
+            case "S" -> 3;
             default -> 0;
         };
     }

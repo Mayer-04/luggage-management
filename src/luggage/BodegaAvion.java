@@ -4,7 +4,6 @@ import datastructures.stack.Stack;
 
 public class BodegaAvion {
 
-    // Límites
     private static final int LIMITE_TOTAL = 100;
     private static final int LIMITE_L = 20;
     private static final int LIMITE_M = 30;
@@ -66,7 +65,6 @@ public class BodegaAvion {
 
     public Equipaje extraerTope() {
         Equipaje maleta = pila.pop();
-        // Restar al contador correspondiente
         switch (maleta.categoriaTiquete()) {
             case "L" -> contadorL--;
             case "M" -> contadorM--;
