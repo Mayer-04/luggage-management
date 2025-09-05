@@ -1,6 +1,5 @@
 package services;
 
-
 import datastructures.list.List;
 import domain.Bodega;
 import domain.BodegaAvion;
@@ -42,10 +41,12 @@ public class Avion {
 
             if (destinoMaleta.equals(destinoVuelo)) {
                 boolean agregado = vuelo.agregarEquipaje(maleta);
+
                 if (!agregado) {
                     throw new IllegalStateException("No se pudo agregar la maleta al vuelo " + vuelo.getDestino() +
-                            " (límite alcanzado o categoría llena).");
+                            ": se alcanzó el límite de 100 equipajes por bodega.");
                 }
+
                 break;
             }
         }

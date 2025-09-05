@@ -18,7 +18,9 @@ public class ColaGeneral {
         return cola.isEmpty();
     }
 
-    public int size() { return cola.size(); }
+    public int size() {
+        return cola.size();
+    }
 
     @Override
     public String toString() {

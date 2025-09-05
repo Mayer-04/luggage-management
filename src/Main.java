@@ -23,10 +23,10 @@ public class Main {
 
         while (isRunning) {
             System.out.println(MENU);
-            System.out.print("Ingrese su opción: ");
+            System.out.print("Ingresa una opción entre 1 y 8: ");
 
+            String opcion = scanner.nextLine().trim();
             try {
-                String opcion = scanner.nextLine().trim();
                 int opcionComoNumero = Integer.parseInt(opcion);
                 switch (opcionComoNumero) {
                     case 1 -> gestorEquipaje.registrarEquipaje();
@@ -40,7 +40,7 @@ public class Main {
                     default -> System.out.println("Opción inválida, intenta de nuevo.");
                 }
             } catch (NumberFormatException e) {
-                System.out.println("Entrada inválida. Introduce un número entre 1 y 8.");
+                System.err.printf("La entrada '%s' no es válida. Por favor escribe un número entre 1 y 8.%n", opcion);
             }
         }
 
