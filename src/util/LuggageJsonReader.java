@@ -20,10 +20,9 @@ public class LuggageJsonReader {
 
     public List<Equipaje> cargarDatos() {
         try {
-            String json = Files.readString(path); // ejemplo.json
+            String json = Files.readString(path);
 
-            Type listType = new TypeToken<List<Equipaje>>() {
-            }.getType();
+            Type listType = TypeToken.getParameterized(List.class, Equipaje.class).getType();
 
             return gson.fromJson(json, listType);
 

@@ -3,6 +3,8 @@ package services;
 import domain.Bodega;
 import domain.BodegaAvion;
 
+import java.util.stream.Stream;
+
 public final class ColeccionBodegas {
 
     private static final String[] CIUDADES = {
@@ -11,19 +13,24 @@ public final class ColeccionBodegas {
 
     private ColeccionBodegas() {}
 
+    /**
+     * Obtiene una lista de bodegas de entrada, una para cada ciudad en CIUDADES.
+     *
+     * @return lista de bodegas de entrada
+     */
     public static Bodega[] obtenerBodegasDeEntrada() {
-        var bodegas = new Bodega[CIUDADES.length];
-        for (int i = 0; i < CIUDADES.length; i++) {
-            bodegas[i] = new Bodega(CIUDADES[i]);
-        }
-        return bodegas;
+        return Stream.of(CIUDADES)
+                .map(Bodega::new)
+                .toArray(Bodega[]::new);
     }
 
+    /**
+     * Obtiene una lista de bodegas de aviones, una para cada ciudad en CIUDADES.
+     * @return lista de bodegas de aviones
+     */
     public static BodegaAvion[] obtenerBodegasDeAviones() {
-        var bodegasAvion = new BodegaAvion[CIUDADES.length];
-        for (int i = 0; i < CIUDADES.length; i++) {
-            bodegasAvion[i] = new BodegaAvion(CIUDADES[i]);
-        }
-        return bodegasAvion;
+        return Stream.of(CIUDADES)
+                .map(BodegaAvion::new)
+                .toArray(BodegaAvion[]::new);
     }
 }

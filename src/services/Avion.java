@@ -102,24 +102,3 @@ public class Avion {
         return estadisticasVuelos;
     }
 }
-
-    /*
-    public static void abordarVuelo(Bodega[] bodegas, BodegaAvion[] vuelos) {
-        for (Bodega bodega : bodegas) {
-            while (!bodega.estaVacia()) {
-                // Sacamos el último elemento de la lista
-                Equipaje maleta = bodega.sacarUltimoEquipaje();
-                // Recorremos cada bodega
-                for (BodegaAvion vuelo : vuelos) {
-                    String destinoMaleta = maleta.destino();
-                    String destinoVuelo = vuelo.getDestino();
-                    if (destinoMaleta.equals(destinoVuelo)) {
-                        // Agregamos la maleta al final de la bodega
-                        vuelo.agregarEquipaje(maleta);
-                        break;
-                    }
-                }
-            }
-        }
-    }
-    */

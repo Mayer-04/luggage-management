@@ -4,20 +4,25 @@ import domain.ColaGeneral;
 import domain.Equipaje;
 import services.Avion;
 import services.Bodegas;
+import services.ColeccionBodegas;
 import services.Estadisticas;
 import util.LuggageJsonReader;
 
 import java.util.List;
 import java.util.Scanner;
 
-public class Interfaz {
+public class InterfazGestorEquipaje {
 
     private final ColaGeneral colaGeneral;
     private final Scanner scanner;
+    private final Bodega[] bodegas;
+    private final BodegaAvion[] bodegasAvion;
 
-    public Interfaz(ColaGeneral colaGeneral, Scanner sc) {
-        this.colaGeneral = colaGeneral;
+    public InterfazGestorEquipaje(Scanner sc) {
+        this.colaGeneral = new ColaGeneral();
         this.scanner = sc;
+        this.bodegas = ColeccionBodegas.obtenerBodegasDeEntrada();
+        this.bodegasAvion = ColeccionBodegas.obtenerBodegasDeAviones();
     }
 
     public Equipaje pedirMaleta() {
@@ -68,7 +73,7 @@ public class Interfaz {
         }
     }
 
-    public void registrarMultiplesEquipajes(ColaGeneral colaGeneral) {
+    public void registrarMultiplesEquipajes() {
         var lector = new LuggageJsonReader("./src/resources/luggage_500.json");
         List<Equipaje> maletas = lector.cargarDatos();
 
@@ -85,7 +90,7 @@ public class Interfaz {
         System.out.println("Cantidad antes: " + antes + " | Ahora: " + despues);
     }
 
-    public void procesarEquipajes(Bodega[] bodegas) {
+    public void procesarEquipajes() {
         if (colaGeneral.estaVacia()) {
             System.out.println("⚠️ No hay equipajes en la cola general.");
             System.out.println("Primero debes registrar equipajes usando la opción 1 o 2 del menú.");
@@ -99,7 +104,7 @@ public class Interfaz {
     }
 
 
-    public void abordarVuelo(Bodega[] bodegas, BodegaAvion[] vuelos) {
+    public void abordarVuelo() {
         // Validación 1: nunca se procesaron equipajes
         if (bodegas == null) {
             System.out.println("⚠️ Debes procesar los equipajes (opción 3) antes de abordar el vuelo.");
@@ -114,7 +119,7 @@ public class Interfaz {
         }
 
         try {
-            Avion.abordarVuelo(bodegas, vuelos);
+            Avion.abordarVuelo(bodegas, bodegasAvion);
             System.out.println("✈️ Los pasajeros y su equipaje han sido abordados exitosamente.");
         } catch (IllegalStateException e) {
             System.out.println("Error al abordar vuelo: " + e.getMessage());
@@ -123,16 +128,16 @@ public class Interfaz {
         }
     }
 
-    public void desembarcarVuelo(BodegaAvion[] vuelos) {
+    public void desembarcarVuelo() {
         // Validación 1: no hay vuelos creados
-        if (vuelos == null) {
+        if (bodegasAvion == null) {
             System.out.println("⚠️ No hay vuelos abordados para desembarcar. Use la opción 4 primero.");
             return;
         }
 
         // Validación 2: vuelos creados pero vacíos
         boolean vuelosVacios = true;
-        for (BodegaAvion vuelo : vuelos) {
+        for (BodegaAvion vuelo : bodegasAvion) {
             if (!vuelo.estaVacia()) {
                 vuelosVacios = false;
                 break;
@@ -147,7 +152,7 @@ public class Interfaz {
 
         // Si pasa las validaciones, desembarcamos
         try {
-            Avion.desembarcarVuelo(vuelos);
+            Avion.desembarcarVuelo(bodegasAvion);
             System.out.println("Los pasajeros llegaron a su respectivo destino...");
         } catch (Exception e) {
             System.out.println("Error al desembarcar vuelo: " + e.getMessage());
@@ -155,22 +160,22 @@ public class Interfaz {
     }
 
 
-    public void mostrarListaPasajeros(BodegaAvion[] vuelos) {
-        if (vuelos == null) {
+    public void mostrarListaPasajeros() {
+        if (bodegasAvion == null) {
             System.out.println("⚠️ No hay vuelos abordados. Use la opción 4 primero.");
             return;
         }
 
-        Estadisticas.mostrarListaDePasajeros(vuelos);
+        Estadisticas.mostrarListaDePasajeros(bodegasAvion);
     }
 
-    public void mostrarEstadisticas(BodegaAvion[] vuelos) {
-        if (vuelos == null) {
+    public void mostrarEstadisticas() {
+        if (bodegasAvion == null) {
             System.out.println("⚠️ No hay vuelos abordados. Use la opción 4 primero.");
             return;
         }
 
-        Estadisticas.mostrarEstadistica(vuelos);
+        Estadisticas.mostrarEstadistica(bodegasAvion);
 
         System.out.println("📊 Se han mostrado las estadísticas. Los vuelos quedaron vacíos.");
     }
