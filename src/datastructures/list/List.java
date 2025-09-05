@@ -2,12 +2,24 @@ package datastructures.list;
 
 import java.util.Iterator;
 
+/**
+ * Implementación genérica de una lista basada en un arreglo dinámico.
+ * <p>
+ * La lista crece automáticamente cuando alcanza su capacidad máxima y
+ * permite acceder, insertar, modificar y eliminar elementos en posiciones específicas.
+ * </p>
+ *
+ * @param <T> el tipo de elementos que contendrá la lista
+ */
 @SuppressWarnings("unchecked")
 public class List<T> implements Iterable<T> {
 
     private T[] elements;
     private int size;
 
+    /**
+     * Crea una lista vacía con capacidad inicial de 1.
+     */
     public List() {
         elements = (T[]) new Object[1];
         size = 0;
@@ -236,15 +248,28 @@ public class List<T> implements Iterable<T> {
         return size;
     }
 
+    /**
+     * Redimensiona la capacidad interna de la lista.
+     *
+     * @param newCapacity la nueva capacidad del arreglo interno
+     */
     private void resize(int newCapacity) {
         T[] newArray = (T[]) new Object[newCapacity];
 
         // if (size >= 0) System.arraycopy(elements, 0, newArray, 0, size);
-        if (size >= 0) System.arraycopy(elements, 0, newArray, 0, size);
+        for (int i = 0; i < size; i++) {
+            newArray[i] = elements[i];
+        }
 
         elements = newArray;
     }
 
+    /**
+     * Devuelve un <strong>iterador</strong> para recorrer los elementos de la lista
+     * en orden natural (de izquierda a derecha).
+     *
+     * @return un iterador de tipo {@link Iterator}
+     */
     @Override
     public Iterator<T> iterator() {
         return new ArrayIterator();
@@ -252,8 +277,10 @@ public class List<T> implements Iterable<T> {
 
     /**
      * Devuelve una representación en cadena de la lista.
+     * <p>
+     * Las cadenas se muestran entre comillas dobles.
      *
-     * @return una cadena que representa la lista y su total de elementos
+     * @return una cadena que representa la lista
      */
     @Override
     public String toString() {
@@ -275,14 +302,28 @@ public class List<T> implements Iterable<T> {
         return output.toString();
     }
 
+    /**
+     * Iterador interno que recorre los elementos de la lista
+     * en orden secuencial.
+     */
     private class ArrayIterator implements Iterator<T> {
         private int index = 0;
 
+        /**
+         * Indica si aún quedan elementos por recorrer.
+         *
+         * @return {@code true} si hay más elementos, {@code false} en caso contrario
+         */
         @Override
         public boolean hasNext() {
             return index < size;
         }
 
+        /**
+         * Devuelve el siguiente elemento en el recorrido.
+         *
+         * @return el siguiente elemento de la lista
+         */
         @Override
         public T next() {
             return elements[index++];

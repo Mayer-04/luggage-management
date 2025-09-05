@@ -1,7 +1,7 @@
-import luggage.Bodega;
-import luggage.BodegaAvion;
-import luggage.ColaGeneral;
-import util.ColeccionBodegas;
+import domain.Bodega;
+import domain.BodegaAvion;
+import domain.ColaGeneral;
+import services.ColeccionBodegas;
 
 import java.util.Scanner;
 

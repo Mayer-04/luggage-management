@@ -1,9 +1,10 @@
-package util;
+package services;
+
 
 import datastructures.list.List;
-import luggage.Bodega;
-import luggage.BodegaAvion;
-import luggage.Equipaje;
+import domain.Bodega;
+import domain.BodegaAvion;
+import domain.Equipaje;
 
 public class Avion {
 

@@ -1,8 +1,8 @@
-package util;
+package services;
 
 import datastructures.list.List;
-import luggage.BodegaAvion;
-import luggage.Equipaje;
+import domain.BodegaAvion;
+import domain.Equipaje;
 
 public class Estadisticas {
 

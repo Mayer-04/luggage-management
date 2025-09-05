@@ -46,7 +46,9 @@ public class Bag<T> implements Iterable<T> {
 
     private void resize(int newCapacity) {
         T[] newArray = (T[]) new Object[newCapacity];
-        if (size >= 0) System.arraycopy(elements, 0, newArray, 0, size);
+        for (int i = 0; i < size; i++) {
+            newArray[i] = elements[i];
+        }
         elements = newArray;
     }
 

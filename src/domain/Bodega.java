@@ -1,4 +1,4 @@
-package luggage;
+package domain;
 
 import datastructures.list.List;
 

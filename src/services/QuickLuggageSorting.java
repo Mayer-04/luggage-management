@@ -1,7 +1,7 @@
-package util;
+package services;
 
 import datastructures.list.List;
-import luggage.Equipaje;
+import domain.Equipaje;
 
 public class QuickLuggageSorting {
 
@@ -51,7 +51,6 @@ public class QuickLuggageSorting {
 
             int indiceParticion = i + 1;
 
-            // Recursividad
             quickSort(lista, inicio, indiceParticion - 1);
             quickSort(lista, indiceParticion + 1, fin);
         }

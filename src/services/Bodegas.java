@@ -1,9 +1,9 @@
-package util;
+package services;
 
 import datastructures.list.List;
-import luggage.Bodega;
-import luggage.ColaGeneral;
-import luggage.Equipaje;
+import domain.Bodega;
+import domain.ColaGeneral;
+import domain.Equipaje;
 
 public class Bodegas {
 
@@ -33,12 +33,6 @@ public class Bodegas {
         for (Equipaje maleta : equipajesOrdenados) {
             // Recorremos cada bodega que tenemos
             for (Bodega bodega : bodegas) {
-
-                // Si el tamaño de la bodega es menor a 50, imprimimos un error y salimos del método.
-//                if (bodega.size() < 50) {
-//                    System.out.printf("La bodega %s tiene menos de 50 maletas.", bodega.getDestino());
-//                    return;
-//                }
 
                 // Obtenemos el "destino" de cada maleta, por ejemplo (Bogotá, Cali, etc.).
                 String destinoMaleta = maleta.destino();

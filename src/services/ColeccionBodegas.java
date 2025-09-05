@@ -1,7 +1,7 @@
-package util;
+package services;
 
-import luggage.Bodega;
-import luggage.BodegaAvion;
+import domain.Bodega;
+import domain.BodegaAvion;
 
 public final class ColeccionBodegas {
 

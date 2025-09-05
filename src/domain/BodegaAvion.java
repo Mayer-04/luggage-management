@@ -1,4 +1,4 @@
-package luggage;
+package domain;
 
 import datastructures.stack.Stack;
 
@@ -10,7 +10,6 @@ public class BodegaAvion {
     private static final int LIMITE_S = 50;
     private final Stack<Equipaje> pila = new Stack<>();
     private final String destino;
-    // Contadores por categoría
     private int contadorL = 0;
     private int contadorM = 0;
     private int contadorS = 0;
@@ -23,12 +22,12 @@ public class BodegaAvion {
         return destino;
     }
 
-    public int getCantidadTotal() {
-        return contadorL + contadorM + contadorS;
-    }
-
     public Iterable<Equipaje> getPasajeros() {
         return pila;
+    }
+
+    public int getCantidadTotal() {
+        return contadorL + contadorM + contadorS;
     }
 
     public boolean agregarEquipaje(Equipaje maleta) {
@@ -60,11 +59,13 @@ public class BodegaAvion {
                     "Categoría desconocida: " + maleta.categoriaTiquete()
             );
         }
+
         return false;
     }
 
     public Equipaje extraerTope() {
         Equipaje maleta = pila.pop();
+
         switch (maleta.categoriaTiquete()) {
             case "L" -> contadorL--;
             case "M" -> contadorM--;

@@ -1,10 +1,10 @@
-import luggage.Bodega;
-import luggage.BodegaAvion;
-import luggage.ColaGeneral;
-import luggage.Equipaje;
-import util.Avion;
-import util.Bodegas;
-import util.Estadisticas;
+import domain.Bodega;
+import domain.BodegaAvion;
+import domain.ColaGeneral;
+import domain.Equipaje;
+import services.Avion;
+import services.Bodegas;
+import services.Estadisticas;
 import util.LuggageJsonReader;
 
 import java.util.List;
@@ -69,7 +69,7 @@ public class Interfaz {
     }
 
     public void registrarMultiplesEquipajes(ColaGeneral colaGeneral) {
-        var lector = new LuggageJsonReader("luggage_500.json");
+        var lector = new LuggageJsonReader("./src/resources/luggage_500.json");
         List<Equipaje> maletas = lector.cargarDatos();
 
         int antes = colaGeneral.size();
