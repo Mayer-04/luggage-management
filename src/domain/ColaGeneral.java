@@ -3,7 +3,6 @@ package domain;
 import datastructures.queue.Queue;
 
 public class ColaGeneral {
-
     private final Queue<Equipaje> cola = new Queue<>();
 
     public void registrarEquipaje(Equipaje maleta) {

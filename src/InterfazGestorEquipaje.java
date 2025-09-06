@@ -101,7 +101,6 @@ public class InterfazGestorEquipaje {
         System.out.println("Los equipajes fueron procesados y enviados a sus bodegas correctamente.");
     }
 
-
     public void abordarVuelo() {
         if (!Avion.hayEquipajesParaAbordar(bodegas)) {
             System.out.println("No hay equipajes en las bodegas para abordar el vuelo.");
@@ -113,10 +112,9 @@ public class InterfazGestorEquipaje {
             Avion.abordarVuelo(bodegas, bodegasAvion);
             System.out.println("Los pasajeros y su equipaje fueron abordados exitosamente.");
         } catch (IllegalStateException e) {
-            System.out.println("Error al abordar vuelo: " + e.getMessage());
+            System.err.println("Error al abordar vuelo: " + e.getMessage());
         }
     }
-
 
     public void desembarcarVuelo() {
         boolean vuelosVacios = true;

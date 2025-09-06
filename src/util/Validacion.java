@@ -11,16 +11,7 @@ public class Validacion {
 
         String destinoMinusculas = destino.toLowerCase();
 
-        // Quitar acentos y diacríticos
         return Normalizer.normalize(destinoMinusculas, Normalizer.Form.NFD)
                 .replaceAll("\\p{M}", "");
-    }
-
-    public static String convertirAMayusculas(String texto) {
-        if (texto == null || texto.isBlank()) {
-            return null;
-        }
-
-        return texto.toUpperCase();
     }
 }

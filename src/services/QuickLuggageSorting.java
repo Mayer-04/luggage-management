@@ -6,7 +6,6 @@ import domain.Equipaje;
 public class QuickLuggageSorting {
 
     private static int prioridad(Equipaje maleta) {
-        // Convertimos a mayúscula la "categoria del tiquete".
         String categoriaTiquete = maleta.categoriaTiquete();
         return switch (categoriaTiquete) {
             case "L" -> 1;

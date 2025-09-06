@@ -1,18 +1,12 @@
 package domain;
 
 import datastructures.stack.Stack;
+import services.InventarioEquipaje;
 
 public class BodegaAvion {
-
-    private static final int LIMITE_TOTAL = 100;
-    private static final int LIMITE_L = 20;
-    private static final int LIMITE_M = 30;
-    private static final int LIMITE_S = 50;
     private final Stack<Equipaje> pila = new Stack<>();
     private final String destino;
-    private int contadorL = 0;
-    private int contadorM = 0;
-    private int contadorS = 0;
+    private final InventarioEquipaje inventario = new InventarioEquipaje();
 
     public BodegaAvion(String destino) {
         this.destino = destino;
@@ -26,51 +20,22 @@ public class BodegaAvion {
         return pila;
     }
 
-    public int getCantidadTotal() {
-        return contadorL + contadorM + contadorS;
+    public InventarioEquipaje getInventario() {
+        return inventario;
     }
 
     public boolean agregarEquipaje(Equipaje maleta) {
-        if (size() >= LIMITE_TOTAL) return false;
-
-        switch (maleta.categoriaTiquete()) {
-            case "L" -> {
-                if (contadorL < LIMITE_L) {
-                    contadorL++;
-                    pila.push(maleta);
-                    return true;
-                }
-            }
-            case "M" -> {
-                if (contadorM < LIMITE_M) {
-                    contadorM++;
-                    pila.push(maleta);
-                    return true;
-                }
-            }
-            case "S" -> {
-                if (contadorS < LIMITE_S) {
-                    contadorS++;
-                    pila.push(maleta);
-                    return true;
-                }
-            }
-            default -> throw new IllegalArgumentException(
-                    "Categoría desconocida: " + maleta.categoriaTiquete()
-            );
+        if (!inventario.quedaCupoPara(maleta.categoriaTiquete())) {
+            return false;
         }
-
-        return false;
+        inventario.incrementarContadores(maleta.categoriaTiquete());
+        pila.push(maleta);
+        return true;
     }
 
     public Equipaje extraerTope() {
         Equipaje maleta = pila.pop();
-
-        switch (maleta.categoriaTiquete()) {
-            case "L" -> contadorL--;
-            case "M" -> contadorM--;
-            case "S" -> contadorS--;
-        }
+        inventario.decrementarContadores(maleta.categoriaTiquete());
         return maleta;
     }
 

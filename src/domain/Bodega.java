@@ -3,7 +3,6 @@ package domain;
 import datastructures.list.List;
 
 public class Bodega {
-
     private final List<Equipaje> lista = new List<>();
     private final String destino;
 

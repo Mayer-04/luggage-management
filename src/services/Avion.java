@@ -17,22 +17,6 @@ public class Avion {
         return false;
     }
 
-//    private static void colocarMaletaEnVuelo(Equipaje maleta, BodegaAvion[] vuelos) {
-//        for (BodegaAvion vuelo : vuelos) {
-//            String destinoMaleta = maleta.destino();
-//            String destinoVuelo = vuelo.getDestino();
-//
-//            if (!destinoMaleta.equals(destinoVuelo)) {
-//                continue;
-//            }
-//
-//            boolean agregado = vuelo.agregarEquipaje(maleta);
-//            if (agregado) {
-//                break;
-//            }
-//        }
-//    }
-
     private static void colocarMaletaEnVuelo(Equipaje maleta, BodegaAvion[] vuelos) {
         for (BodegaAvion vuelo : vuelos) {
 
@@ -41,17 +25,15 @@ public class Avion {
 
             if (destinoMaleta.equals(destinoVuelo)) {
                 boolean agregado = vuelo.agregarEquipaje(maleta);
-
                 if (!agregado) {
-                    throw new IllegalStateException("No se pudo agregar la maleta al vuelo " + vuelo.getDestino() +
-                            ": se alcanzó el límite de 100 equipajes por bodega.");
+                    System.out.printf("%s : %d%n", destinoMaleta, vuelo.size());
+                    throw new IllegalStateException("Se alcanzó el límite de 100 equipajes por bodega.");
                 }
 
                 break;
             }
         }
     }
-
 
     private static void distribuirEquipaje(Bodega bodega, BodegaAvion[] vuelos) {
         while (!bodega.estaVacia()) {
