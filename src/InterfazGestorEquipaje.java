@@ -1,3 +1,4 @@
+import datastructures.list.List;
 import domain.Bodega;
 import domain.BodegaAvion;
 import domain.ColaGeneral;
@@ -9,7 +10,6 @@ import services.Estadisticas;
 import util.Constantes;
 import util.LuggageJsonReader;
 
-import java.util.List;
 import java.util.Scanner;
 
 public class InterfazGestorEquipaje {
@@ -75,8 +75,8 @@ public class InterfazGestorEquipaje {
     }
 
     public void registrarMultiplesEquipajes() {
-        var lector = new LuggageJsonReader("./src/resources/luggage_500.json");
-        List<Equipaje> maletas = lector.cargarDatos();
+        var lector = new LuggageJsonReader("./src/resources/luggage_700.json");
+        java.util.List<Equipaje> maletas = lector.cargarDatos();
 
         int antes = colaGeneral.size();
 
@@ -104,15 +104,36 @@ public class InterfazGestorEquipaje {
     public void abordarVuelo() {
         if (!Avion.hayEquipajesParaAbordar(bodegas)) {
             System.out.println("No hay equipajes en las bodegas para abordar el vuelo.");
-            System.out.println("Primero registra los equipajes con la opción 1 o 2, y luego utiliza la opción 3 para procesarlos.\n");
             return;
         }
 
-        try {
-            Avion.abordarVuelo(bodegas, bodegasAvion);
-            System.out.println("Los pasajeros y su equipaje fueron abordados exitosamente.");
-        } catch (IllegalStateException e) {
-            System.err.println("Error al abordar vuelo: " + e.getMessage());
+        // Intentamos abordar los vuelos, obtenemos las maletas que no pudieron subirse
+        List<Equipaje> noAbordadas = Avion.abordarVuelo(bodegas, bodegasAvion);
+
+        // Mostrar mensaje general de maletas omitidas
+        if (!noAbordadas.isEmpty()) {
+            System.out.println("⚠️ Algunas maletas no pudieron abordarse por límite de categoría y serán omitidas.");
+        }
+
+        // Mostrar resumen por bodega de avión
+        System.out.println("\nResumen de equipajes abordados por vuelo:");
+        for (BodegaAvion vuelo : bodegasAvion) {
+            int totalEquipajes = vuelo.size();
+            System.out.printf("✈️ Vuelo destino: %s | Equipajes abordados: %d%n",
+                    vuelo.getDestino(), totalEquipajes);
+        }
+    }
+
+    public void mostrarContenidoBodegasAvion() {
+        for (BodegaAvion vuelo : bodegasAvion) {
+            System.out.println("✈️ Vuelo destino: " + vuelo.getDestino());
+            int i = 1;
+            for (Equipaje maleta : vuelo.getPasajeros()) {
+                System.out.printf("  %d. Pasajero: %s | Categoría: %s | Peso: %d%n",
+                        i++, maleta.pasajero(), maleta.categoriaTiquete(), maleta.peso());
+            }
+            System.out.println("Total equipajes: " + vuelo.size());
+            System.out.println("-----------------------------");
         }
     }
 
