@@ -5,10 +5,35 @@ import domain.Bodega;
 import domain.BodegaAvion;
 import domain.Equipaje;
 
+/**
+ * La clase {@code Avion} gestiona el proceso de carga y descarga de equipajes en los vuelos.
+ * <p>
+ * Proporciona métodos para:
+ * <ul>
+ *   <li>Verificar si existen equipajes listos para ser abordados.</li>
+ *   <li>Distribuir y ordenar equipajes en las bodegas de los aviones.</li>
+ *   <li>Obtener estadísticas de equipajes transportados al finalizar un vuelo.</li>
+ * </ul>
+ *
+ * <p><b>Ejemplo de uso:</b></p>
+ * <pre>{@code
+ * Bodega[] bodegas = {...};
+ * BodegaAvion[] vuelos = {...};
+ *
+ * // Abordar todos los vuelos con las bodegas disponibles
+ * List<Equipaje> noAbordadas = Avion.abordarVuelo(bodegas, vuelos);
+ *
+ * // Desembarcar los vuelos y obtener estadísticas
+ * List<int[]> estadisticas = Avion.desembarcarVuelo(vuelos);
+ * }</pre>
+ */
 public class Avion {
 
     /**
-     * Verifica si hay equipajes en alguna bodega lista para abordar.
+     * Verifica si alguna de las bodegas contiene equipajes listos para abordar.
+     *
+     * @param bodegas arreglo de bodegas a inspeccionar
+     * @return {@code true} si existe al menos una bodega con equipajes, {@code false} en caso contrario
      */
     public static boolean hayEquipajesParaAbordar(Bodega[] bodegas) {
         if (bodegas == null) return false;
@@ -21,26 +46,27 @@ public class Avion {
     }
 
     /**
-     * Coloca las maletas de la bodega en la pila del avión ordenadas por categoría de tiquete.
-     * Si alguna categoría está llena, la maleta se omite.
+     * Extrae los equipajes de una bodega, los ordena por categoría de tiquete (L > M > S)
+     * utilizando un algoritmo de ordenamiento <strong>Quicksort</strong>
+     * y los intenta colocar en el avión.
+     * Si una categoría ya alcanzó su límite, los equipajes correspondientes no son abordados.
      *
-     * @param bodega La bodega origen de las maletas.
-     * @param vuelo  La bodega del avión destino.
-     * @return Lista de equipajes que no pudieron abordarse.
+     * @param bodega bodega origen de los equipajes
+     * @param vuelo  bodega del avión destino
+     * @return lista de equipajes que no pudieron ser abordados
      */
     private static List<Equipaje> colocarMaletasEnVueloConOrden(Bodega bodega, BodegaAvion vuelo) {
         List<Equipaje> lista = new List<>();
         List<Equipaje> noAbordadas = new List<>();
 
-        // Sacamos todas las maletas de la bodega
+        Equipaje ultimoElementoBodega = bodega.sacarUltimoEquipaje();
+
         while (!bodega.estaVacia()) {
-            lista.addLast(bodega.sacarUltimoEquipaje());
+            lista.addLast(ultimoElementoBodega);
         }
 
-        // Ordenamos según categoría de tiquete (L > M > S)
         QuickLuggageSorting.quickSort(lista);
 
-        // Push en la pila del avión respetando los límites por categoría
         for (Equipaje maleta : lista) {
             boolean agregado = vuelo.agregarEquipaje(maleta);
             if (!agregado) {
@@ -52,19 +78,22 @@ public class Avion {
     }
 
     /**
-     * Distribuye el equipaje de una bodega hacia la bodega correspondiente del avión.
+     * Distribuye los equipajes de una bodega hacia la bodega correspondiente en los aviones,
+     * determinada por el destino de la bodega.
      *
-     * @param bodega Bodega de origen
-     * @param vuelos Arreglo de bodega de aviones
-     * @return Lista de equipajes que no pudieron abordarse
+     * @param bodega bodega de origen
+     * @param vuelos arreglo de bodegas de avión disponibles
+     * @return lista de equipajes que no pudieron ser abordados en el avión correspondiente
      */
     private static List<Equipaje> distribuirEquipaje(Bodega bodega, BodegaAvion[] vuelos) {
         List<Equipaje> noAbordadasTotales = new List<>();
+        String destinoBodega = bodega.getDestino();
 
         for (BodegaAvion vuelo : vuelos) {
-            if (bodega.getDestino().equals(vuelo.getDestino())) {
+            String destinoVuelo = vuelo.getDestino();
+
+            if (destinoBodega.equals(destinoVuelo)) {
                 List<Equipaje> noAbordadas = colocarMaletasEnVueloConOrden(bodega, vuelo);
-                // Guardamos las maletas que no pudieron subir
                 for (Equipaje eq : noAbordadas) {
                     noAbordadasTotales.addLast(eq);
                 }
@@ -76,12 +105,17 @@ public class Avion {
     }
 
     /**
-     * Función principal para cargar los vuelos.
-     * Toma todas las bodegas generales y distribuye su contenido en los vuelos.
+     * Carga los vuelos distribuyendo los equipajes de todas las bodegas
+     * hacia las bodegas correspondientes de los aviones.
      *
-     * @param bodegas Bodegas de origen
-     * @param vuelos  Bodegas de avión destino
-     * @return Lista de equipajes que no pudieron abordarse
+     * @param bodegas bodegas de origen
+     * @param vuelos  bodegas de avión destino
+     * @return lista de equipajes que no pudieron ser abordados
+     *
+     * <p><strong>Ejemplo:</strong></p>
+     * <pre>{@code
+     * List<Equipaje> noCargados = Avion.abordarVuelo(bodegas, vuelos);
+     * }</pre>
      */
     public static List<Equipaje> abordarVuelo(Bodega[] bodegas, BodegaAvion[] vuelos) {
         List<Equipaje> noAbordadasTotales = new List<>();
@@ -97,12 +131,25 @@ public class Avion {
     }
 
     /**
-     * Despacha todos los vuelos y genera estadísticas.
-     * Por cada vuelo obtiene:
-     * - la cantidad total de maletas
-     * - el peso total de todas las maletas
+     * Despacha los vuelos y genera estadísticas de cada uno.
+     * <p>
+     * Para cada vuelo, devuelve un arreglo con:
+     * <ul>
+     *   <li>[0] cantidad total de maletas transportadas</li>
+     *   <li>[1] peso total de todas las maletas</li>
+     * </ul>
      *
-     * Retorna una lista donde cada elemento es un arreglo de enteros [cantidad, peso].
+     * @param vuelos arreglo de bodegas de avión a despachar
+     * @return lista donde cada elemento es un arreglo {@code [cantidad, peso]}
+     *
+     * <p><b>Ejemplo:</b></p>
+     * <pre>{@code
+     * List<int[]> estadisticas = Avion.desembarcarVuelo(vuelos);
+     * for (int[] vueloStats : estadisticas) {
+     *     System.out.println("Cantidad: " + vueloStats[0]);
+     *     System.out.println("Peso total: " + vueloStats[1]);
+     * }
+     * }</pre>
      */
     public static List<int[]> desembarcarVuelo(BodegaAvion[] vuelos) {
         var estadisticasVuelos = new List<int[]>();

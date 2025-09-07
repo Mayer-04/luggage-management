@@ -39,7 +39,6 @@ public class Estadisticas {
                             maleta.peso());
                 }
             }
-
             System.out.println("=================================\n");
         }
     }

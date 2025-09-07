@@ -1,12 +1,10 @@
+package services;
+
 import datastructures.list.List;
 import domain.Bodega;
 import domain.BodegaAvion;
 import domain.ColaGeneral;
 import domain.Equipaje;
-import services.Avion;
-import services.Bodegas;
-import services.ColeccionBodegas;
-import services.Estadisticas;
 import util.Constantes;
 import util.LuggageJsonReader;
 

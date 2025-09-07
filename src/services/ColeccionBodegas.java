@@ -14,15 +14,18 @@ public final class ColeccionBodegas {
     }
 
     /**
-     * Construye un arreglo de objetos {@link Bodega}, uno por cada ciudad en {@code Constantes.DESTINOS}.
+     * Crea un arreglo de {@link Bodega}, una por cada ciudad guardada en
+     * {@code Constantes.DESTINOS}.
+     * <p>
+     * Básicamente: recorre la lista de destinos y arma una bodega para cada uno.
+     * </p>
      *
-     * @return un arreglo de {@link Bodega}, donde cada elemento representa una ciudad.
+     * @return un arreglo de bodegas, cada una con el nombre de una ciudad destino.
      */
     public static Bodega[] obtenerBodegasDeEntrada() {
         String[] destinos = Constantes.DESTINOS;
         Bodega[] bodegas = new Bodega[destinos.length];
 
-        // Crear una bodega por cada ciudad
         for (int i = 0; i < destinos.length; i++) {
             bodegas[i] = new Bodega(destinos[i]);
         }
@@ -31,15 +34,19 @@ public final class ColeccionBodegas {
     }
 
     /**
-     * Construye un arreglo de objetos {@link BodegaAvion}, uno por cada ciudad en {@code Constantes.DESTINOS}.
+     * Crea un arreglo de {@link BodegaAvion}, una por cada ciudad guardada en
+     * {@code Constantes.DESTINOS}.
+     * <p>
+     * Igual que el método anterior, pero en lugar de bodegas normales,
+     * se generan bodegas de avión.
+     * </p>
      *
-     * @return un arreglo de {@link BodegaAvion}, donde cada elemento representa una ciudad.
+     * @return un arreglo de bodegas de avión, cada una con el nombre de una ciudad destino.
      */
     public static BodegaAvion[] obtenerBodegasDeAviones() {
         String[] destinos = Constantes.DESTINOS;
         BodegaAvion[] bodegasAvion = new BodegaAvion[destinos.length];
 
-        // Crear una bodega de avión por cada ciudad
         for (int i = 0; i < destinos.length; i++) {
             bodegasAvion[i] = new BodegaAvion(destinos[i]);
         }
