@@ -31,8 +31,9 @@ public class Main {
     public static void main(String[] args) {
         var scanner = new Scanner(System.in);
         var gestorEquipaje = new InterfazGestorEquipaje(scanner);
+        var estaCorriendo = true;
 
-        while (true) {
+        while (estaCorriendo) {
             System.out.println(MENU);
             System.out.print("Ingrese una opción entre 1 y 9: ");
 
@@ -49,8 +50,9 @@ public class Main {
                     case 7 -> gestorEquipaje.mostrarListaPasajeros();
                     case 8 -> gestorEquipaje.mostrarEstadisticas();
                     case 9 -> {
+                        System.out.println("Saliendo del programa...");
+                        estaCorriendo = false;
                         scanner.close();
-                        return;
                     }
                     default -> System.out.println("Opción inválida, intente de nuevo.");
                 }

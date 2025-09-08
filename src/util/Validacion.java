@@ -3,32 +3,7 @@ package util;
 import datastructures.list.List;
 import domain.Equipaje;
 
-import java.text.Normalizer;
-
 public class Validacion {
-
-    private static final String NORMALIZAR_PATRON = "[^a-z\\s]";
-
-    /**
-     * Normaliza un nombre de destino de viaje para que solo contenga
-     * caracteres alfanumericos y espacios. El nombre se convierte a
-     * minusculas y se eliminan los diacriticos y otros caracteres no
-     * deseados.
-     *
-     * @param destino El nombre del destino a normalizar.
-     * @return El nombre del destino normalizado, o null si el nombre
-     * original era null o vacio.
-     */
-    public static String normalizarDestino(String destino) {
-        if (destino == null || destino.isBlank()) {
-            return null;
-        }
-
-        String destinoMinusculas = destino.toLowerCase();
-
-        return Normalizer.normalize(destinoMinusculas, Normalizer.Form.NFD)
-                .replaceAll(NORMALIZAR_PATRON, "");
-    }
 
     /**
      * Verifica si la categoría es válida.
