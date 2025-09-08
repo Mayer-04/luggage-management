@@ -18,19 +18,27 @@ public class Main {
             9) Salir
             """;
 
+        /**
+         * Punto de entrada principal del programa.
+         *
+         * <p>En este método se instancia una clase {@link InterfazGestorEquipaje}
+         * y se crea un bucle principal que se encarga de mostrar el menú principal
+         * al usuario y de realizar la acción correspondiente según la opción
+         * seleccionada por el usuario.</p>
+         *
+         * @param args argumentos pasados al programa desde la línea de comandos
+         */
     public static void main(String[] args) {
         var scanner = new Scanner(System.in);
-        var isRunning = true;
+        var gestorEquipaje = new InterfazGestorEquipaje(scanner);
 
-        InterfazGestorEquipaje gestorEquipaje = new InterfazGestorEquipaje(scanner);
-
-        while (isRunning) {
+        while (true) {
             System.out.println(MENU);
-            System.out.print("Ingresa una opción entre 1 y 9: ");
+            System.out.print("Ingrese una opción entre 1 y 9: ");
 
-            String opcion = scanner.nextLine().trim();
+            var opcion = scanner.nextLine().trim();
             try {
-                int opcionComoNumero = Integer.parseInt(opcion);
+                var opcionComoNumero = Integer.parseInt(opcion);
                 switch (opcionComoNumero) {
                     case 1 -> gestorEquipaje.registrarEquipaje();
                     case 2 -> gestorEquipaje.registrarMultiplesEquipajes();
@@ -40,14 +48,15 @@ public class Main {
                     case 6 -> gestorEquipaje.desembarcarVuelo();
                     case 7 -> gestorEquipaje.mostrarListaPasajeros();
                     case 8 -> gestorEquipaje.mostrarEstadisticas();
-                    case 9 -> isRunning = false;
-                    default -> System.out.println("Opción inválida, intenta de nuevo.");
+                    case 9 -> {
+                        scanner.close();
+                        return;
+                    }
+                    default -> System.out.println("Opción inválida, intente de nuevo.");
                 }
             } catch (NumberFormatException e) {
                 System.err.printf("La entrada '%s' no es válida. Por favor escribe un número entre 1 y 9.%n", opcion);
             }
         }
-
-        scanner.close();
     }
 }

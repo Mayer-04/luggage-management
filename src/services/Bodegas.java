@@ -43,21 +43,19 @@ public class Bodegas {
      * en el resto de bodegas para optimizar el proceso.
      * </p>
      *
-     * @param cola    la cola general que contiene los equipajes pendientes de procesar.
-     * @param bodegas el arreglo de bodegas disponibles donde se almacenarán los equipajes.
-     *
-     * @throws NullPointerException si {@code cola} o {@code bodegas} es {@code null}.
+     * @param cola la cola general que contiene los equipajes pendientes de procesar
+     * @param bodegas el arreglo de bodegas disponibles donde se almacenarán los equipajes
      */
     public static void procesarEquipaje(ColaGeneral cola, Bodega[] bodegas) {
         while (!cola.estaVacia()) {
-            Equipaje maleta = cola.sacarEquipaje();
-            String destinoMaleta = maleta.destino();
+            Equipaje equipaje = cola.sacarEquipaje();
+            String destinoEquipaje = equipaje.destino();
 
             for (Bodega bodega : bodegas) {
                 String bodegaDestino = bodega.getDestino();
 
-                if (destinoMaleta.equals(bodegaDestino)) {
-                    bodega.agregarEquipaje(maleta);
+                if (destinoEquipaje.equals(bodegaDestino)) {
+                    bodega.agregarEquipaje(equipaje);
                     break;
                 }
             }

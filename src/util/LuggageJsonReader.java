@@ -18,16 +18,27 @@ public class LuggageJsonReader {
         this.path = Path.of(filePath);
     }
 
+    /**
+     * Lee un archivo JSON con la ruta especificada en el constructor y devuelve
+     * una lista de objetos {@link Equipaje} correspondientes a los datos en el
+     * archivo.
+     * <p>
+     * Si ocurre un error al leer el archivo, se lanza una excepción de tipo
+     * {@link IllegalArgumentException} con el mensaje "Error leyendo el archivo
+     * JSON" y el objeto {@link IOException} original como causa.
+     *
+     * @return una lista de objetos {@link Equipaje} con los datos del archivo JSON
+     */
     public List<Equipaje> cargarDatos() {
         try {
             String json = Files.readString(path);
 
-            Type listType = TypeToken.getParameterized(List.class, Equipaje.class).getType();
+            Type tipoDeLista = TypeToken.getParameterized(List.class, Equipaje.class).getType();
 
-            return gson.fromJson(json, listType);
+            return gson.fromJson(json, tipoDeLista);
 
         } catch (IOException e) {
-            throw new RuntimeException("Error leyendo el archivo JSON", e);
+            throw new IllegalArgumentException("Error leyendo el archivo JSON", e);
         }
     }
 }

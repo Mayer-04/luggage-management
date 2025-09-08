@@ -29,13 +29,22 @@ import domain.Equipaje;
  */
 public class Avion {
 
+
     /**
-     * Verifica si alguna de las bodegas contiene equipajes listos para abordar.
+     * Verifica si existen equipajes en alguna de las bodegas para abordar un vuelo.
+     * <p>
+     * Si el arreglo de bodegas es {@code null}, se devuelve {@code false}.
+     * </p>
+     * <p>
+     * De lo contrario, se itera en la lista de bodegas y se verifica si alguna de ellas
+     * contiene al menos un equipaje. Si se encuentra al menos una bodega con contenido,
+     * se devuelve {@code true}. De lo contrario, se devuelve {@code false}.
+     * </p>
      *
-     * @param bodegas arreglo de bodegas a inspeccionar
-     * @return {@code true} si existe al menos una bodega con equipajes, {@code false} en caso contrario
+     * @param bodegas arreglo de bodegas a verificar
+     * @return {@code true} si hay equipajes listos para abordar, {@code false} en caso contrario
      */
-    public static boolean hayEquipajesParaAbordar(Bodega[] bodegas) {
+    public static boolean verificarEquipajesParaAbordar(Bodega[] bodegas) {
         if (bodegas == null) return false;
         for (Bodega bodega : bodegas) {
             if (!bodega.estaVacia()) {
@@ -45,43 +54,53 @@ public class Avion {
         return false;
     }
 
+
     /**
-     * Extrae los equipajes de una bodega, los ordena por categoría de tiquete (L > M > S)
-     * utilizando un algoritmo de ordenamiento <strong>Quicksort</strong>
-     * y los intenta colocar en el avión.
-     * Si una categoría ya alcanzó su límite, los equipajes correspondientes no son abordados.
+     * Coloca las maletas de una bodega en un vuelo en orden por categoría de tiquete (L > M > S).
+     * <p>
+     * Primero, se extraen todas las maletas de la bodega y se ordenan ascendentemente
+     * por categoría utilizando el algoritmo <strong>QuickSort</strong>. 
+     * Luego, se intenta agregar cada maleta en el vuelo en orden. 
+     * Si alguna maleta no puede ser agregada (debido a que se ha alcanzado el límite de una categoría), 
+     * se agrega a la lista de maletas no abordadas.
+     * </p>
      *
-     * @param bodega bodega origen de los equipajes
-     * @param vuelo  bodega del avión destino
-     * @return lista de equipajes que no pudieron ser abordados
+     * @param bodega bodega de la que se extraerán las maletas
+     * @param vueloDestino vuelo donde se intentarán agregar las maletas
+     * @return lista de maletas que no pudieron ser abordadas
      */
-    private static List<Equipaje> colocarMaletasEnVueloConOrden(Bodega bodega, BodegaAvion vuelo) {
-        List<Equipaje> lista = new List<>();
-        List<Equipaje> noAbordadas = new List<>();
+    private static List<Equipaje> colocarMaletasEnVueloConOrden(Bodega bodega, BodegaAvion vueloDestino) {
+        List<Equipaje> maletasOrdenadas = new List<>();
+        List<Equipaje> maletasNoAbordadas = new List<>();
 
         while (!bodega.estaVacia()) {
-            lista.addLast(bodega.sacarUltimoEquipaje());
+            maletasOrdenadas.addLast(bodega.sacarUltimoEquipaje());
         }
 
-        QuickLuggageSorting.quickSort(lista);
+        QuickLuggageSorting.quickSort(maletasOrdenadas);
 
-        for (Equipaje maleta : lista) {
-            boolean agregado = vuelo.agregarEquipaje(maleta);
+        for (Equipaje maleta : maletasOrdenadas) {
+            boolean agregado = vueloDestino.agregarEquipaje(maleta);
             if (!agregado) {
-                noAbordadas.addLast(maleta);
+                maletasNoAbordadas.addLast(maleta);
             }
         }
 
-        return noAbordadas;
+        return maletasNoAbordadas;
     }
 
     /**
-     * Distribuye los equipajes de una bodega hacia la bodega correspondiente en los aviones,
-     * determinada por el destino de la bodega.
+     * Distribuye los equipajes de una bodega en el vuelo que se destine al mismo lugar.
+     * <p>
+     * Primero, se busca el vuelo correspondiente al destino de la bodega.
+     * Luego, se intenta agregar cada maleta en el vuelo en orden por categoría de tiquete.
+     * Si alguna maleta no puede ser agregada (debido a que se ha alcanzado el límite de una categoría),
+     * se agrega a la lista de maletas no abordadas.
+     * </p>
      *
-     * @param bodega bodega de origen
-     * @param vuelos arreglo de bodegas de avión disponibles
-     * @return lista de equipajes que no pudieron ser abordados en el avión correspondiente
+     * @param bodega bodega de la que se extraerán las maletas
+     * @param vuelos arreglo de vuelos disponibles
+     * @return lista de maletas que no pudieron ser abordadas
      */
     private static List<Equipaje> distribuirEquipaje(Bodega bodega, BodegaAvion[] vuelos) {
         List<Equipaje> noAbordadasTotales = new List<>();
@@ -92,6 +111,7 @@ public class Avion {
 
             if (destinoBodega.equals(destinoVuelo)) {
                 List<Equipaje> noAbordadas = colocarMaletasEnVueloConOrden(bodega, vuelo);
+
                 for (Equipaje eq : noAbordadas) {
                     noAbordadasTotales.addLast(eq);
                 }
@@ -157,7 +177,7 @@ public class Avion {
             int pesoTotal = 0;
 
             while (!vuelo.estaVacia()) {
-                Equipaje maleta = vuelo.extraerTope();
+                Equipaje maleta = vuelo.sacarTope();
                 cantidadTotal++;
                 pesoTotal += maleta.peso();
             }

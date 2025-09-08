@@ -25,15 +25,17 @@ public class BodegaAvion {
     }
 
     public boolean agregarEquipaje(Equipaje maleta) {
-        if (!inventario.quedaCupoPara(maleta.categoriaTiquete())) {
-            return false;
+        String categoriaTiquete = maleta.categoriaTiquete();
+
+        if (inventario.hayCupoPara(categoriaTiquete)) {
+            pila.push(maleta);
+            inventario.incrementarContadores(maleta.categoriaTiquete());
+            return true;
         }
-        inventario.incrementarContadores(maleta.categoriaTiquete());
-        pila.push(maleta);
-        return true;
+        return false;
     }
 
-    public Equipaje extraerTope() {
+    public Equipaje sacarTope() {
         Equipaje maleta = pila.pop();
         inventario.decrementarContadores(maleta.categoriaTiquete());
         return maleta;

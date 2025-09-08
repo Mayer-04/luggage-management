@@ -52,20 +52,47 @@ public class InventarioEquipaje {
     private static final int LIMITE_S = 50;
 
     /**
-     * Verifica si queda cupo disponible para agregar un equipaje de la categoría dada.
+     * Verifica si hay cupo disponible para un equipaje de la categoría
+     * especificada.
+     * <p>
+     * La verificación tiene en cuenta dos aspectos:
+     * <ul>
+     *   <li>La cantidad actual de equipajes en la categoría no debe
+     *       superar el límite máximo para esa categoría.</li>
+     *   <li>El total de equipajes en la bodega no debe superar el
+     *       límite máximo total.</li>
+     * </ul>
+     * </p>
+     * <p>
+     * Si la categoría es desconocida, se lanza una excepción de tipo
+     * {@link IllegalArgumentException}.
+     * </p>
      *
-     * @param categoria La categoría del equipaje ("L", "M", "S").
-     * @return {@code true} si todavía hay espacio para la categoría y no se supera el límite total;
-     * {@code false} en caso contrario.
-     * @throws IllegalArgumentException Si la categoría no es "L", "M" ni "S".
+     * @param categoria la categoría del equipaje a verificar
+     * @return {@code true} si hay cupo disponible, {@code false} en caso
+     *         contrario
      */
-    public boolean quedaCupoPara(String categoria) {
-        return switch (categoria) {
-            case "L" -> contadorL < LIMITE_L && getTotal() < LIMITE_TOTAL;
-            case "M" -> contadorM < LIMITE_M && getTotal() < LIMITE_TOTAL;
-            case "S" -> contadorS < LIMITE_S && getTotal() < LIMITE_TOTAL;
+    public boolean hayCupoPara(String categoria) {
+        int limite;
+        int contador;
+
+        switch (categoria) {
+            case "L" -> {
+                limite = LIMITE_L;
+                contador = contadorL;
+            }
+            case "M" -> {
+                limite = LIMITE_M;
+                contador = contadorM;
+            }
+            case "S" -> {
+                limite = LIMITE_S;
+                contador = contadorS;
+            }
             default -> throw new IllegalArgumentException("Categoría desconocida: " + categoria);
-        };
+        }
+
+        return contador < limite && getTotal() < LIMITE_TOTAL;
     }
 
     /**

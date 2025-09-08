@@ -7,7 +7,9 @@ import domain.ColaGeneral;
 import domain.Equipaje;
 import util.Constantes;
 import util.LuggageJsonReader;
+import util.Validacion;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class InterfazGestorEquipaje {
@@ -24,12 +26,11 @@ public class InterfazGestorEquipaje {
         this.bodegasAvion = ColeccionBodegas.obtenerBodegasDeAviones();
     }
 
-    public Equipaje pedirMaleta() {
-
-        System.out.print("Ingresa el nombre del pasajero: ");
+        public Equipaje obtenerEquipaje() {
+        System.out.print("Nombre del pasajero: ");
         String nombrePasajero = scanner.nextLine();
 
-        System.out.print("Ingresa el destino (Bogotá, Medellín, Cali, Bucaramanga o Barranquilla): ");
+        System.out.print("Destino (Bogotá, Medellín, Cali, Bucaramanga o Barranquilla): ");
         String destino = scanner.nextLine();
 
         boolean destinoValido = false;
@@ -42,18 +43,25 @@ public class InterfazGestorEquipaje {
 
         if (!destinoValido) {
             System.out.println("Destino inválido.");
+            System.out.println("Verifica que esté escrito exactamente igual a los destinos dados o que sea correcto.");
             return null;
         }
 
-        System.out.print("Ingrese su tiquete (L, M, S): ");
+        System.out.print("Tiquete (L, M, S): ");
         String categoriaTiquete = scanner.nextLine().trim().toUpperCase();
 
-        System.out.print("Ingrese el peso del equipaje (sin puntos ni comas): ");
+        boolean categoriaValida = Validacion.esCategoriaValida(categoriaTiquete);
+        if (!categoriaValida) {
+            System.out.println("Categoría de tiquete inválida.");
+            return null;
+        }
+
+        System.out.print("Peso del equipaje: ");
         int peso;
         try {
             peso = Integer.parseInt(scanner.nextLine().trim());
         } catch (NumberFormatException e) {
-            System.err.println("Peso inválido.");
+            System.out.println("Peso inválido");
             return null;
         }
 
@@ -61,31 +69,31 @@ public class InterfazGestorEquipaje {
     }
 
     public void registrarEquipaje() {
-        var equipaje = pedirMaleta();
+        Equipaje equipaje = obtenerEquipaje();
 
-        if (equipaje != null) {
-            colaGeneral.registrarEquipaje(equipaje);
-            System.out.println("Equipaje registrado con éxito.");
-            System.out.println("Equipaje: " + equipaje);
-        } else {
-            System.out.println("No fue posible registrar el equipaje.");
+        if (equipaje == null) {
+            System.out.println("No se pudo registrar el equipaje.");
+            return;
         }
+
+        colaGeneral.registrarEquipaje(equipaje);
+        System.out.println("El equipaje se registró con éxito.");
     }
 
     public void registrarMultiplesEquipajes() {
         var lector = new LuggageJsonReader("./src/resources/luggage_700.json");
-        java.util.List<Equipaje> maletas = lector.cargarDatos();
+        java.util.List<Equipaje> equipajes = lector.cargarDatos();
 
-        int antes = colaGeneral.size();
+        int cantidadAntes = colaGeneral.size();
 
-        for (Equipaje l : maletas) {
+        for (Equipaje l : equipajes) {
             colaGeneral.registrarEquipaje(l);
         }
 
-        int despues = colaGeneral.size();
+        int cantidadDespues = colaGeneral.size();
 
-        System.out.println("Se registraron " + maletas.size() + " equipajes en la cola general.");
-        System.out.println("Cantidad antes: " + antes + " | Ahora: " + despues + "\n");
+        System.out.println("Se registraron " + equipajes.size() + " equipajes en la cola general.");
+        System.out.println("Cantidad antes: " + cantidadAntes + " | Ahora: " + cantidadDespues + "\n");
     }
 
     public void procesarEquipajes() {
@@ -100,20 +108,15 @@ public class InterfazGestorEquipaje {
     }
 
     public void abordarVuelo() {
-        if (!Avion.hayEquipajesParaAbordar(bodegas)) {
+        if (!Avion.verificarEquipajesParaAbordar(bodegas)) {
             System.out.println("No hay equipajes en las bodegas para abordar el vuelo.");
             return;
         }
 
-        // Intentamos abordar los vuelos, obtenemos las maletas que no pudieron subirse
-        List<Equipaje> noAbordadas = Avion.abordarVuelo(bodegas, bodegasAvion);
+        List<Equipaje> noAbordados = Avion.abordarVuelo(bodegas, bodegasAvion);
 
-        // Mostrar mensaje general de maletas omitidas
-        if (!noAbordadas.isEmpty()) {
-            System.out.println("⚠️ Algunas maletas no pudieron abordarse por límite de categoría y serán omitidas.");
-        }
+        Validacion.mostrarResumenNoAbordadas(noAbordados);
 
-        // Mostrar resumen por bodega de avión
         System.out.println("\nResumen de equipajes abordados por vuelo:");
         for (BodegaAvion vuelo : bodegasAvion) {
             int totalEquipajes = vuelo.size();
@@ -124,11 +127,11 @@ public class InterfazGestorEquipaje {
 
     public void mostrarContenidoBodegasAvion() {
         for (BodegaAvion vuelo : bodegasAvion) {
-            System.out.println("✈️ Vuelo destino: " + vuelo.getDestino());
-            int i = 1;
+            System.out.println("Vuelo destino: " + vuelo.getDestino());
+            int numeroDeMaleta = 1;
             for (Equipaje maleta : vuelo.getPasajeros()) {
                 System.out.printf("  %d. Pasajero: %s | Categoría: %s | Peso: %d kg%n",
-                        i++, maleta.pasajero(), maleta.categoriaTiquete(), maleta.peso());
+                        numeroDeMaleta++, maleta.pasajero(), maleta.categoriaTiquete(), maleta.peso());
             }
             System.out.println("Total equipajes: " + vuelo.size());
             System.out.println("-----------------------------");
@@ -159,6 +162,6 @@ public class InterfazGestorEquipaje {
     }
 
     public void mostrarEstadisticas() {
-        Estadisticas.mostrarEstadistica(bodegasAvion);
+        Estadisticas.mostrarEstadisticas(bodegasAvion);
     }
 }

@@ -6,34 +6,49 @@ import domain.Equipaje;
 
 public class Estadisticas {
 
-    public static void mostrarEstadistica(BodegaAvion[] vuelos) {
-        List<int[]> despachar = Avion.desembarcarVuelo(vuelos);
+    /**
+     * Muestra por consola las estadísticas de cada vuelo, incluyendo el destino,
+     * cantidad de pasajeros y peso total transportado.
+     *
+     * @param vuelos arreglo de bodegas de avión a mostrar sus estadísticas
+     */
+    public static void mostrarEstadisticas(BodegaAvion[] vuelos) {
+        List<int[]> estadisticas = Avion.desembarcarVuelo(vuelos);
 
         for (int i = 0; i < vuelos.length; i++) {
-            BodegaAvion avion = vuelos[i];
-            int[] estadisticaAvion = despachar.get(i);
+            BodegaAvion vuelo = vuelos[i];
+            int[] estadistica = estadisticas.get(i);
 
             System.out.println("=================================");
-            System.out.println("✈️ Avión destino: " + avion.getDestino());
-            System.out.println("Pasajeros: " + estadisticaAvion[0]);
-            System.out.println("Peso total: " + estadisticaAvion[1] + " kg");
+            System.out.println("✈️ Avión destino: " + vuelo.getDestino());
+            System.out.println("  Pasajeros: " + estadistica[0]);
+            System.out.println("  Peso total: " + estadistica[1] + " kg");
             System.out.println("=================================\n");
         }
     }
 
+    /**
+     * Muestra por consola la lista de pasajeros a bordo para cada vuelo.
+     * <p>
+     * Para cada vuelo, se muestra el destino, la cantidad de pasajeros y
+     * su lista de pasajeros con su tiquete y peso.
+     * </p>
+     *
+     * @param vuelos arreglo de bodegas de avión a mostrar sus pasajeros
+     */
     public static void mostrarListaDePasajeros(BodegaAvion[] vuelos) {
-        for (BodegaAvion avion : vuelos) {
+        for (BodegaAvion vuelo : vuelos) {
             System.out.println("=================================");
-            System.out.println("✈️ Avión destino: " + avion.getDestino());
+            System.out.println("✈️ Avión destino: " + vuelo.getDestino());
             System.out.println("Pasajeros a bordo:");
 
-            if (avion.estaVacia()) {
+            if (vuelo.estaVacia()) {
                 System.out.println(" (Sin pasajeros)");
             } else {
-                int i = 1;
-                for (Equipaje maleta : avion.getPasajeros()) {
+                int numeroDeMaleta = 1;
+                for (Equipaje maleta : vuelo.getPasajeros()) {
                     System.out.printf("   %d. %s (Tiquete: %s, %d kg)%n",
-                            i++,
+                            numeroDeMaleta++,
                             maleta.pasajero(),
                             maleta.categoriaTiquete(),
                             maleta.peso());
