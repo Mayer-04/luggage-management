@@ -26,7 +26,7 @@ public class Main {
 
         while (isRunning) {
             System.out.println(MENU);
-            System.out.print("Ingresa una opción entre 1 y 8: ");
+            System.out.print("Ingresa una opción entre 1 y 9: ");
 
             String opcion = scanner.nextLine().trim();
             try {
@@ -44,7 +44,7 @@ public class Main {
                     default -> System.out.println("Opción inválida, intenta de nuevo.");
                 }
             } catch (NumberFormatException e) {
-                System.err.printf("La entrada '%s' no es válida. Por favor escribe un número entre 1 y 8.%n", opcion);
+                System.err.printf("La entrada '%s' no es válida. Por favor escribe un número entre 1 y 9.%n", opcion);
             }
         }
 

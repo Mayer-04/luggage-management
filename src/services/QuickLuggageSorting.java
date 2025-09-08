@@ -8,9 +8,9 @@ public class QuickLuggageSorting {
     private static int prioridad(Equipaje maleta) {
         String categoriaTiquete = maleta.categoriaTiquete();
         return switch (categoriaTiquete) {
-            case "L" -> 1;
+            case "L" -> 3;
             case "M" -> 2;
-            case "S" -> 3;
+            case "S" -> 1;
             default -> 0;
         };
     }
@@ -36,7 +36,7 @@ public class QuickLuggageSorting {
                 int prioridadJ = prioridad(lista.get(j));
                 int prioridadPivote = prioridad(pivote);
 
-                if (prioridadJ >= prioridadPivote) {
+                if (prioridadJ <= prioridadPivote) {
                     i++;
                     Equipaje temp = lista.get(i);
                     lista.set(i, lista.get(j));

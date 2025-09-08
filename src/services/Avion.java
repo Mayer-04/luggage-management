@@ -59,10 +59,8 @@ public class Avion {
         List<Equipaje> lista = new List<>();
         List<Equipaje> noAbordadas = new List<>();
 
-        Equipaje ultimoElementoBodega = bodega.sacarUltimoEquipaje();
-
         while (!bodega.estaVacia()) {
-            lista.addLast(ultimoElementoBodega);
+            lista.addLast(bodega.sacarUltimoEquipaje());
         }
 
         QuickLuggageSorting.quickSort(lista);
