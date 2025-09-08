@@ -127,7 +127,7 @@ public class InterfazGestorEquipaje {
             System.out.println("✈️ Vuelo destino: " + vuelo.getDestino());
             int i = 1;
             for (Equipaje maleta : vuelo.getPasajeros()) {
-                System.out.printf("  %d. Pasajero: %s | Categoría: %s | Peso: %d%n",
+                System.out.printf("  %d. Pasajero: %s | Categoría: %s | Peso: %d kg%n",
                         i++, maleta.pasajero(), maleta.categoriaTiquete(), maleta.peso());
             }
             System.out.println("Total equipajes: " + vuelo.size());
