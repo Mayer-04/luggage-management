@@ -8,7 +8,7 @@ public class Main {
             Seleccione una opción:
             ----------------------
             1) Registrar equipaje
-            2) Registrar 700 equipajes
+            2) Registrar equipajes desde (500, 700 o 1000)
             3) Procesar equipaje
             4) Abordar vuelo
             5) Mostrar bodegas de avión

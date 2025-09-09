@@ -9,6 +9,8 @@ import util.Constantes;
 import util.LuggageJsonReader;
 import util.Validacion;
 
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -81,7 +83,18 @@ public class InterfazGestorEquipaje {
     }
 
     public void registrarMultiplesEquipajes() {
-        var lector = new LuggageJsonReader("./src/resources/luggage_700.json");
+        System.out.print("Elige la cantidad de equipajes a registrar (500, 700, 1000): ");
+        String opcion = scanner.nextLine().trim();
+
+        String rutaArchivo = "./src/resources/luggage_" + opcion + ".json";
+        Path archivo = Path.of(rutaArchivo);
+
+        if (!Files.exists(archivo)) {
+            System.out.printf("El archivo %s no existe. Intenta con 500, 700 o 1000.%n", rutaArchivo);
+            return;
+        }
+
+        var lector = new LuggageJsonReader(rutaArchivo);
         java.util.List<Equipaje> equipajes = lector.cargarDatos();
 
         int cantidadAntes = colaGeneral.size();
@@ -95,6 +108,7 @@ public class InterfazGestorEquipaje {
         System.out.println("Se registraron " + equipajes.size() + " equipajes en la cola general.");
         System.out.println("Cantidad antes: " + cantidadAntes + " | Ahora: " + cantidadDespues + "\n");
     }
+
 
     public void procesarEquipajes() {
         if (colaGeneral.estaVacia()) {
