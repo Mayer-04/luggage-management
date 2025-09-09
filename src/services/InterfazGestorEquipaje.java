@@ -158,8 +158,16 @@ public class InterfazGestorEquipaje {
             return;
         }
 
-        Avion.desembarcarVuelo(bodegasAvion);
-        System.out.println("Los pasajeros han llegado a su destino correspondiente.");
+        var estadisticasFinales = Avion.desembarcarVuelo(bodegasAvion);
+
+        int i = 0;
+        for (BodegaAvion vuelo : bodegasAvion) {
+            int[] stats = estadisticasFinales.get(i++);
+            System.out.printf("✈️ Vuelo destino: %s | Equipajes desembarcados: %d | Peso total: %d kg%n",
+                    vuelo.getDestino(), stats[0], stats[1]);
+        }
+
+        System.out.println("\n✅ Todos los vuelos han desembarcado. Los pasajeros han llegado a su destino correspondiente.\n");
     }
 
     public void mostrarListaPasajeros() {

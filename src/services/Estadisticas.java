@@ -1,6 +1,5 @@
 package services;
 
-import datastructures.list.List;
 import domain.BodegaAvion;
 import domain.Equipaje;
 
@@ -13,17 +12,18 @@ public class Estadisticas {
      * @param vuelos arreglo de bodegas de avión a mostrar sus estadísticas
      */
     public static void mostrarEstadisticas(BodegaAvion[] vuelos) {
-        List<int[]> estadisticas = Avion.desembarcarVuelo(vuelos);
+        for (BodegaAvion vuelo : vuelos) {
+            int cantidad = vuelo.size();
+            int pesoTotal = 0;
 
-        for (int i = 0; i < vuelos.length; i++) {
-            BodegaAvion vuelo = vuelos[i];
-            int[] estadistica = estadisticas.get(i);
+            for (Equipaje maleta : vuelo.getPasajeros()) {
+                pesoTotal += maleta.peso();
+            }
 
-            System.out.println("=================================");
             System.out.println("✈️ Avión destino: " + vuelo.getDestino());
-            System.out.println("  Pasajeros: " + estadistica[0]);
-            System.out.println("  Peso total: " + estadistica[1] + " kg");
-            System.out.println("=================================\n");
+            System.out.println("   Pasajeros a bordo: " + cantidad);
+            System.out.println("   Peso total equipaje: " + pesoTotal + " kg");
+            System.out.println("---------------------------------\n");
         }
     }
 
