@@ -11,11 +11,10 @@ public class Main {
             2) Registrar (300, 500, 700 o 1000) equipajes
             3) Procesar equipaje
             4) Abordar vuelo
-            5) Mostrar bodegas de avión
-            6) Lista de pasajeros
-            7) Mostrar estadísticas
-            8) Desembarcar vuelo
-            9) Salir
+            5) Lista de pasajeros
+            6) Mostrar estadísticas
+            7) Desembarcar vuelo
+            8) Salir
             """;
 
     /**
@@ -35,7 +34,7 @@ public class Main {
 
         while (estaCorriendo) {
             System.out.println(MENU);
-            System.out.print("Ingrese una opción entre 1 y 9: ");
+            System.out.print("Ingrese una opción entre 1 y 8: ");
 
             var opcion = scanner.nextLine().trim();
             try {
@@ -45,11 +44,10 @@ public class Main {
                     case 2 -> gestorEquipaje.registrarMultiplesEquipajes();
                     case 3 -> gestorEquipaje.procesarEquipajes();
                     case 4 -> gestorEquipaje.abordarVuelo();
-                    case 5 -> gestorEquipaje.mostrarContenidoBodegasAvion();
-                    case 6 -> gestorEquipaje.mostrarListaPasajeros();
-                    case 7 -> gestorEquipaje.mostrarEstadisticas();
-                    case 8 -> gestorEquipaje.desembarcarVuelo();
-                    case 9 -> {
+                    case 5 -> gestorEquipaje.mostrarListaPasajeros();
+                    case 6 -> gestorEquipaje.mostrarEstadisticas();
+                    case 7 -> gestorEquipaje.desembarcarVuelo();
+                    case 8 -> {
                         System.out.println("Saliendo del programa...");
                         estaCorriendo = false;
                         scanner.close();
@@ -57,7 +55,7 @@ public class Main {
                     default -> System.out.println("Opción inválida, intente de nuevo.");
                 }
             } catch (NumberFormatException e) {
-                System.err.printf("La entrada '%s' no es válida. Por favor escribe un número entre 1 y 9.%n", opcion);
+                System.err.printf("La entrada '%s' no es válida. Por favor escribe un número entre 1 y 8.%n", opcion);
             }
         }
     }

@@ -20,10 +20,6 @@ public class BodegaAvion {
         return pila;
     }
 
-    public InventarioEquipaje getInventario() {
-        return inventario;
-    }
-
     public boolean agregarEquipaje(Equipaje maleta) {
         String categoriaTiquete = maleta.categoriaTiquete();
 

@@ -11,7 +11,6 @@ import util.Validacion;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class InterfazGestorEquipaje {
@@ -58,7 +57,7 @@ public class InterfazGestorEquipaje {
             return null;
         }
 
-        System.out.print("Peso del equipaje: ");
+        System.out.print("Ingresa el peso del equipaje (sin puntos ni comas): ");
         int peso;
         try {
             peso = Integer.parseInt(scanner.nextLine().trim());
@@ -141,19 +140,6 @@ public class InterfazGestorEquipaje {
             int totalEquipajes = vuelo.size();
             System.out.printf("✈️ Vuelo destino: %s | Equipajes abordados: %d%n",
                     vuelo.getDestino(), totalEquipajes);
-        }
-    }
-
-    public void mostrarContenidoBodegasAvion() {
-        for (BodegaAvion vuelo : bodegasAvion) {
-            System.out.println("Vuelo destino: " + vuelo.getDestino());
-            int numeroDeMaleta = 1;
-            for (Equipaje maleta : vuelo.getPasajeros()) {
-                System.out.printf("  %d. Pasajero: %s | Categoría: %s | Peso: %d kg%n",
-                        numeroDeMaleta++, maleta.pasajero(), maleta.categoriaTiquete(), maleta.peso());
-            }
-            System.out.println("Total equipajes: " + vuelo.size());
-            System.out.println("-----------------------------");
         }
     }
 

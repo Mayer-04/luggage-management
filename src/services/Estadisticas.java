@@ -38,22 +38,22 @@ public class Estadisticas {
      */
     public static void mostrarListaDePasajeros(BodegaAvion[] vuelos) {
         for (BodegaAvion vuelo : vuelos) {
-            System.out.println("=================================");
-            System.out.println("✈️ Avión destino: " + vuelo.getDestino());
-            System.out.println("Pasajeros a bordo:");
+            System.out.println("✈️ Vuelo destino: " + vuelo.getDestino());
 
             if (vuelo.estaVacia()) {
-                System.out.println(" (Sin pasajeros)");
+                System.out.println("   (Sin pasajeros ni equipajes)");
             } else {
                 int numeroDeMaleta = 1;
                 for (Equipaje maleta : vuelo.getPasajeros()) {
-                    System.out.printf("   %d. %s (Tiquete: %s, %d kg)%n",
+                    System.out.printf("   %d. Pasajero: %s | Tiquete: %s | Peso: %d kg%n",
                             numeroDeMaleta++,
                             maleta.pasajero(),
                             maleta.categoriaTiquete(),
                             maleta.peso());
                 }
+                System.out.println("   Total equipajes: " + vuelo.size());
             }
+
             System.out.println("=================================\n");
         }
     }
