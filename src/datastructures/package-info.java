@@ -16,7 +16,7 @@
  *
  * <h2>Estructuras de Datos Disponibles</h2>
  *
- * <h3>{@link datastructures.bag.Bag} - Multiconjunto</h3>
+ * <h3>{@link datastructures.Bag} - Multiconjunto</h3>
  * <p>
  * Colección que permite elementos duplicados sin mantener un orden específico.
  * Ideal para almacenar elementos donde el orden no importa pero sí la multiplicidad.
@@ -66,13 +66,13 @@
  * Los elementos se agregan y eliminan desde la parte superior.
  * </p>
  *
- * <h3>{@link datastructures.deque.Deque} - Cola de Doble Extremo</h3>
+ * <h3>{@link datastructures.Deque} - Cola de Doble Extremo</h3>
  * <p>
  * Estructura que permite inserción y eliminación eficiente en ambos extremos,
  * combinando las funcionalidades de pila y cola.
  * </p>
  *
- * <h3>{@link datastructures.linkedlist.LinkedList} - Lista Enlazada</h3>
+ * <h3>{@link datastructures.LinkedList} - Lista Enlazada</h3>
  * <p>
  * Implementación de lista enlazada que permite inserción y eliminación eficiente
  * en cualquier posición sin necesidad de redimensionar arreglos.
