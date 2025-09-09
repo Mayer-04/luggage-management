@@ -1,0 +1,1802 @@
+[
+  {
+    "pasajero": "Pasajero_1",
+    "destino": "Medellín",
+    "categoriaTiquete": "S",
+    "peso": 6
+  },
+  {
+    "pasajero": "Pasajero_2",
+    "destino": "Bucaramanga",
+    "categoriaTiquete": "L",
+    "peso": 19
+  },
+  {
+    "pasajero": "Pasajero_3",
+    "destino": "Bucaramanga",
+    "categoriaTiquete": "S",
+    "peso": 10
+  },
+  {
+    "pasajero": "Pasajero_4",
+    "destino": "Bogotá",
+    "categoriaTiquete": "L",
+    "peso": 20
+  },
+  {
+    "pasajero": "Pasajero_5",
+    "destino": "Bucaramanga",
+    "categoriaTiquete": "L",
+    "peso": 8
+  },
+  {
+    "pasajero": "Pasajero_6",
+    "destino": "Cali",
+    "categoriaTiquete": "M",
+    "peso": 4
+  },
+  {
+    "pasajero": "Pasajero_7",
+    "destino": "Barranquilla",
+    "categoriaTiquete": "S",
+    "peso": 9
+  },
+  {
+    "pasajero": "Pasajero_8",
+    "destino": "Cali",
+    "categoriaTiquete": "S",
+    "peso": 1
+  },
+  {
+    "pasajero": "Pasajero_9",
+    "destino": "Barranquilla",
+    "categoriaTiquete": "S",
+    "peso": 6
+  },
+  {
+    "pasajero": "Pasajero_10",
+    "destino": "Cali",
+    "categoriaTiquete": "M",
+    "peso": 20
+  },
+  {
+    "pasajero": "Pasajero_11",
+    "destino": "Barranquilla",
+    "categoriaTiquete": "S",
+    "peso": 6
+  },
+  {
+    "pasajero": "Pasajero_12",
+    "destino": "Bucaramanga",
+    "categoriaTiquete": "M",
+    "peso": 13
+  },
+  {
+    "pasajero": "Pasajero_13",
+    "destino": "Bucaramanga",
+    "categoriaTiquete": "S",
+    "peso": 1
+  },
+  {
+    "pasajero": "Pasajero_14",
+    "destino": "Bucaramanga",
+    "categoriaTiquete": "S",
+    "peso": 8
+  },
+  {
+    "pasajero": "Pasajero_15",
+    "destino": "Cali",
+    "categoriaTiquete": "M",
+    "peso": 17
+  },
+  {
+    "pasajero": "Pasajero_16",
+    "destino": "Medellín",
+    "categoriaTiquete": "S",
+    "peso": 7
+  },
+  {
+    "pasajero": "Pasajero_17",
+    "destino": "Bogotá",
+    "categoriaTiquete": "L",
+    "peso": 25
+  },
+  {
+    "pasajero": "Pasajero_18",
+    "destino": "Bucaramanga",
+    "categoriaTiquete": "S",
+    "peso": 6
+  },
+  {
+    "pasajero": "Pasajero_19",
+    "destino": "Medellín",
+    "categoriaTiquete": "S",
+    "peso": 1
+  },
+  {
+    "pasajero": "Pasajero_20",
+    "destino": "Barranquilla",
+    "categoriaTiquete": "S",
+    "peso": 3
+  },
+  {
+    "pasajero": "Pasajero_21",
+    "destino": "Bogotá",
+    "categoriaTiquete": "S",
+    "peso": 3
+  },
+  {
+    "pasajero": "Pasajero_22",
+    "destino": "Cali",
+    "categoriaTiquete": "S",
+    "peso": 1
+  },
+  {
+    "pasajero": "Pasajero_23",
+    "destino": "Bogotá",
+    "categoriaTiquete": "S",
+    "peso": 7
+  },
+  {
+    "pasajero": "Pasajero_24",
+    "destino": "Cali",
+    "categoriaTiquete": "M",
+    "peso": 7
+  },
+  {
+    "pasajero": "Pasajero_25",
+    "destino": "Medellín",
+    "categoriaTiquete": "M",
+    "peso": 7
+  },
+  {
+    "pasajero": "Pasajero_26",
+    "destino": "Cali",
+    "categoriaTiquete": "L",
+    "peso": 11
+  },
+  {
+    "pasajero": "Pasajero_27",
+    "destino": "Bogotá",
+    "categoriaTiquete": "L",
+    "peso": 3
+  },
+  {
+    "pasajero": "Pasajero_28",
+    "destino": "Bucaramanga",
+    "categoriaTiquete": "M",
+    "peso": 13
+  },
+  {
+    "pasajero": "Pasajero_29",
+    "destino": "Bucaramanga",
+    "categoriaTiquete": "S",
+    "peso": 7
+  },
+  {
+    "pasajero": "Pasajero_30",
+    "destino": "Bucaramanga",
+    "categoriaTiquete": "M",
+    "peso": 16
+  },
+  {
+    "pasajero": "Pasajero_31",
+    "destino": "Bucaramanga",
+    "categoriaTiquete": "S",
+    "peso": 8
+  },
+  {
+    "pasajero": "Pasajero_32",
+    "destino": "Cali",
+    "categoriaTiquete": "L",
+    "peso": 12
+  },
+  {
+    "pasajero": "Pasajero_33",
+    "destino": "Bucaramanga",
+    "categoriaTiquete": "M",
+    "peso": 4
+  },
+  {
+    "pasajero": "Pasajero_34",
+    "destino": "Bucaramanga",
+    "categoriaTiquete": "S",
+    "peso": 7
+  },
+  {
+    "pasajero": "Pasajero_35",
+    "destino": "Medellín",
+    "categoriaTiquete": "L",
+    "peso": 18
+  },
+  {
+    "pasajero": "Pasajero_36",
+    "destino": "Medellín",
+    "categoriaTiquete": "S",
+    "peso": 3
+  },
+  {
+    "pasajero": "Pasajero_37",
+    "destino": "Medellín",
+    "categoriaTiquete": "L",
+    "peso": 8
+  },
+  {
+    "pasajero": "Pasajero_38",
+    "destino": "Bogotá",
+    "categoriaTiquete": "M",
+    "peso": 15
+  },
+  {
+    "pasajero": "Pasajero_39",
+    "destino": "Barranquilla",
+    "categoriaTiquete": "L",
+    "peso": 23
+  },
+  {
+    "pasajero": "Pasajero_40",
+    "destino": "Barranquilla",
+    "categoriaTiquete": "S",
+    "peso": 2
+  },
+  {
+    "pasajero": "Pasajero_41",
+    "destino": "Medellín",
+    "categoriaTiquete": "L",
+    "peso": 17
+  },
+  {
+    "pasajero": "Pasajero_42",
+    "destino": "Cali",
+    "categoriaTiquete": "S",
+    "peso": 9
+  },
+  {
+    "pasajero": "Pasajero_43",
+    "destino": "Cali",
+    "categoriaTiquete": "S",
+    "peso": 5
+  },
+  {
+    "pasajero": "Pasajero_44",
+    "destino": "Cali",
+    "categoriaTiquete": "M",
+    "peso": 15
+  },
+  {
+    "pasajero": "Pasajero_45",
+    "destino": "Barranquilla",
+    "categoriaTiquete": "S",
+    "peso": 3
+  },
+  {
+    "pasajero": "Pasajero_46",
+    "destino": "Medellín",
+    "categoriaTiquete": "L",
+    "peso": 17
+  },
+  {
+    "pasajero": "Pasajero_47",
+    "destino": "Bucaramanga",
+    "categoriaTiquete": "M",
+    "peso": 11
+  },
+  {
+    "pasajero": "Pasajero_48",
+    "destino": "Cali",
+    "categoriaTiquete": "L",
+    "peso": 22
+  },
+  {
+    "pasajero": "Pasajero_49",
+    "destino": "Medellín",
+    "categoriaTiquete": "M",
+    "peso": 19
+  },
+  {
+    "pasajero": "Pasajero_50",
+    "destino": "Bogotá",
+    "categoriaTiquete": "S",
+    "peso": 6
+  },
+  {
+    "pasajero": "Pasajero_51",
+    "destino": "Bucaramanga",
+    "categoriaTiquete": "M",
+    "peso": 17
+  },
+  {
+    "pasajero": "Pasajero_52",
+    "destino": "Bucaramanga",
+    "categoriaTiquete": "L",
+    "peso": 23
+  },
+  {
+    "pasajero": "Pasajero_53",
+    "destino": "Bogotá",
+    "categoriaTiquete": "S",
+    "peso": 2
+  },
+  {
+    "pasajero": "Pasajero_54",
+    "destino": "Bogotá",
+    "categoriaTiquete": "S",
+    "peso": 1
+  },
+  {
+    "pasajero": "Pasajero_55",
+    "destino": "Medellín",
+    "categoriaTiquete": "M",
+    "peso": 16
+  },
+  {
+    "pasajero": "Pasajero_56",
+    "destino": "Bucaramanga",
+    "categoriaTiquete": "S",
+    "peso": 1
+  },
+  {
+    "pasajero": "Pasajero_57",
+    "destino": "Bogotá",
+    "categoriaTiquete": "L",
+    "peso": 9
+  },
+  {
+    "pasajero": "Pasajero_58",
+    "destino": "Barranquilla",
+    "categoriaTiquete": "L",
+    "peso": 3
+  },
+  {
+    "pasajero": "Pasajero_59",
+    "destino": "Medellín",
+    "categoriaTiquete": "L",
+    "peso": 24
+  },
+  {
+    "pasajero": "Pasajero_60",
+    "destino": "Bucaramanga",
+    "categoriaTiquete": "L",
+    "peso": 2
+  },
+  {
+    "pasajero": "Pasajero_61",
+    "destino": "Medellín",
+    "categoriaTiquete": "L",
+    "peso": 10
+  },
+  {
+    "pasajero": "Pasajero_62",
+    "destino": "Medellín",
+    "categoriaTiquete": "S",
+    "peso": 4
+  },
+  {
+    "pasajero": "Pasajero_63",
+    "destino": "Cali",
+    "categoriaTiquete": "L",
+    "peso": 19
+  },
+  {
+    "pasajero": "Pasajero_64",
+    "destino": "Cali",
+    "categoriaTiquete": "S",
+    "peso": 8
+  },
+  {
+    "pasajero": "Pasajero_65",
+    "destino": "Bucaramanga",
+    "categoriaTiquete": "S",
+    "peso": 8
+  },
+  {
+    "pasajero": "Pasajero_66",
+    "destino": "Barranquilla",
+    "categoriaTiquete": "L",
+    "peso": 5
+  },
+  {
+    "pasajero": "Pasajero_67",
+    "destino": "Bogotá",
+    "categoriaTiquete": "S",
+    "peso": 4
+  },
+  {
+    "pasajero": "Pasajero_68",
+    "destino": "Cali",
+    "categoriaTiquete": "L",
+    "peso": 19
+  },
+  {
+    "pasajero": "Pasajero_69",
+    "destino": "Medellín",
+    "categoriaTiquete": "S",
+    "peso": 2
+  },
+  {
+    "pasajero": "Pasajero_70",
+    "destino": "Cali",
+    "categoriaTiquete": "M",
+    "peso": 5
+  },
+  {
+    "pasajero": "Pasajero_71",
+    "destino": "Bogotá",
+    "categoriaTiquete": "S",
+    "peso": 5
+  },
+  {
+    "pasajero": "Pasajero_72",
+    "destino": "Bogotá",
+    "categoriaTiquete": "S",
+    "peso": 7
+  },
+  {
+    "pasajero": "Pasajero_73",
+    "destino": "Barranquilla",
+    "categoriaTiquete": "M",
+    "peso": 14
+  },
+  {
+    "pasajero": "Pasajero_74",
+    "destino": "Barranquilla",
+    "categoriaTiquete": "L",
+    "peso": 14
+  },
+  {
+    "pasajero": "Pasajero_75",
+    "destino": "Bogotá",
+    "categoriaTiquete": "L",
+    "peso": 12
+  },
+  {
+    "pasajero": "Pasajero_76",
+    "destino": "Bucaramanga",
+    "categoriaTiquete": "S",
+    "peso": 2
+  },
+  {
+    "pasajero": "Pasajero_77",
+    "destino": "Medellín",
+    "categoriaTiquete": "M",
+    "peso": 11
+  },
+  {
+    "pasajero": "Pasajero_78",
+    "destino": "Cali",
+    "categoriaTiquete": "M",
+    "peso": 16
+  },
+  {
+    "pasajero": "Pasajero_79",
+    "destino": "Medellín",
+    "categoriaTiquete": "S",
+    "peso": 9
+  },
+  {
+    "pasajero": "Pasajero_80",
+    "destino": "Bucaramanga",
+    "categoriaTiquete": "S",
+    "peso": 1
+  },
+  {
+    "pasajero": "Pasajero_81",
+    "destino": "Cali",
+    "categoriaTiquete": "S",
+    "peso": 1
+  },
+  {
+    "pasajero": "Pasajero_82",
+    "destino": "Medellín",
+    "categoriaTiquete": "M",
+    "peso": 3
+  },
+  {
+    "pasajero": "Pasajero_83",
+    "destino": "Bucaramanga",
+    "categoriaTiquete": "L",
+    "peso": 26
+  },
+  {
+    "pasajero": "Pasajero_84",
+    "destino": "Bogotá",
+    "categoriaTiquete": "S",
+    "peso": 7
+  },
+  {
+    "pasajero": "Pasajero_85",
+    "destino": "Barranquilla",
+    "categoriaTiquete": "M",
+    "peso": 15
+  },
+  {
+    "pasajero": "Pasajero_86",
+    "destino": "Bogotá",
+    "categoriaTiquete": "M",
+    "peso": 10
+  },
+  {
+    "pasajero": "Pasajero_87",
+    "destino": "Cali",
+    "categoriaTiquete": "S",
+    "peso": 5
+  },
+  {
+    "pasajero": "Pasajero_88",
+    "destino": "Medellín",
+    "categoriaTiquete": "M",
+    "peso": 13
+  },
+  {
+    "pasajero": "Pasajero_89",
+    "destino": "Bucaramanga",
+    "categoriaTiquete": "M",
+    "peso": 13
+  },
+  {
+    "pasajero": "Pasajero_90",
+    "destino": "Medellín",
+    "categoriaTiquete": "S",
+    "peso": 6
+  },
+  {
+    "pasajero": "Pasajero_91",
+    "destino": "Cali",
+    "categoriaTiquete": "L",
+    "peso": 13
+  },
+  {
+    "pasajero": "Pasajero_92",
+    "destino": "Barranquilla",
+    "categoriaTiquete": "M",
+    "peso": 9
+  },
+  {
+    "pasajero": "Pasajero_93",
+    "destino": "Bogotá",
+    "categoriaTiquete": "M",
+    "peso": 16
+  },
+  {
+    "pasajero": "Pasajero_94",
+    "destino": "Bucaramanga",
+    "categoriaTiquete": "M",
+    "peso": 2
+  },
+  {
+    "pasajero": "Pasajero_95",
+    "destino": "Medellín",
+    "categoriaTiquete": "L",
+    "peso": 10
+  },
+  {
+    "pasajero": "Pasajero_96",
+    "destino": "Bogotá",
+    "categoriaTiquete": "L",
+    "peso": 11
+  },
+  {
+    "pasajero": "Pasajero_97",
+    "destino": "Medellín",
+    "categoriaTiquete": "M",
+    "peso": 8
+  },
+  {
+    "pasajero": "Pasajero_98",
+    "destino": "Cali",
+    "categoriaTiquete": "S",
+    "peso": 9
+  },
+  {
+    "pasajero": "Pasajero_99",
+    "destino": "Barranquilla",
+    "categoriaTiquete": "M",
+    "peso": 16
+  },
+  {
+    "pasajero": "Pasajero_100",
+    "destino": "Barranquilla",
+    "categoriaTiquete": "L",
+    "peso": 23
+  },
+  {
+    "pasajero": "Pasajero_101",
+    "destino": "Cali",
+    "categoriaTiquete": "M",
+    "peso": 9
+  },
+  {
+    "pasajero": "Pasajero_102",
+    "destino": "Medellín",
+    "categoriaTiquete": "L",
+    "peso": 30
+  },
+  {
+    "pasajero": "Pasajero_103",
+    "destino": "Medellín",
+    "categoriaTiquete": "L",
+    "peso": 22
+  },
+  {
+    "pasajero": "Pasajero_104",
+    "destino": "Bogotá",
+    "categoriaTiquete": "L",
+    "peso": 7
+  },
+  {
+    "pasajero": "Pasajero_105",
+    "destino": "Cali",
+    "categoriaTiquete": "M",
+    "peso": 9
+  },
+  {
+    "pasajero": "Pasajero_106",
+    "destino": "Bogotá",
+    "categoriaTiquete": "S",
+    "peso": 5
+  },
+  {
+    "pasajero": "Pasajero_107",
+    "destino": "Medellín",
+    "categoriaTiquete": "S",
+    "peso": 9
+  },
+  {
+    "pasajero": "Pasajero_108",
+    "destino": "Medellín",
+    "categoriaTiquete": "M",
+    "peso": 5
+  },
+  {
+    "pasajero": "Pasajero_109",
+    "destino": "Barranquilla",
+    "categoriaTiquete": "M",
+    "peso": 8
+  },
+  {
+    "pasajero": "Pasajero_110",
+    "destino": "Cali",
+    "categoriaTiquete": "M",
+    "peso": 1
+  },
+  {
+    "pasajero": "Pasajero_111",
+    "destino": "Medellín",
+    "categoriaTiquete": "M",
+    "peso": 16
+  },
+  {
+    "pasajero": "Pasajero_112",
+    "destino": "Bogotá",
+    "categoriaTiquete": "S",
+    "peso": 1
+  },
+  {
+    "pasajero": "Pasajero_113",
+    "destino": "Medellín",
+    "categoriaTiquete": "M",
+    "peso": 10
+  },
+  {
+    "pasajero": "Pasajero_114",
+    "destino": "Barranquilla",
+    "categoriaTiquete": "S",
+    "peso": 5
+  },
+  {
+    "pasajero": "Pasajero_115",
+    "destino": "Bucaramanga",
+    "categoriaTiquete": "M",
+    "peso": 19
+  },
+  {
+    "pasajero": "Pasajero_116",
+    "destino": "Cali",
+    "categoriaTiquete": "L",
+    "peso": 18
+  },
+  {
+    "pasajero": "Pasajero_117",
+    "destino": "Cali",
+    "categoriaTiquete": "L",
+    "peso": 19
+  },
+  {
+    "pasajero": "Pasajero_118",
+    "destino": "Medellín",
+    "categoriaTiquete": "L",
+    "peso": 9
+  },
+  {
+    "pasajero": "Pasajero_119",
+    "destino": "Bogotá",
+    "categoriaTiquete": "L",
+    "peso": 3
+  },
+  {
+    "pasajero": "Pasajero_120",
+    "destino": "Medellín",
+    "categoriaTiquete": "M",
+    "peso": 5
+  },
+  {
+    "pasajero": "Pasajero_121",
+    "destino": "Bogotá",
+    "categoriaTiquete": "L",
+    "peso": 11
+  },
+  {
+    "pasajero": "Pasajero_122",
+    "destino": "Bucaramanga",
+    "categoriaTiquete": "M",
+    "peso": 1
+  },
+  {
+    "pasajero": "Pasajero_123",
+    "destino": "Barranquilla",
+    "categoriaTiquete": "M",
+    "peso": 15
+  },
+  {
+    "pasajero": "Pasajero_124",
+    "destino": "Medellín",
+    "categoriaTiquete": "L",
+    "peso": 6
+  },
+  {
+    "pasajero": "Pasajero_125",
+    "destino": "Medellín",
+    "categoriaTiquete": "L",
+    "peso": 22
+  },
+  {
+    "pasajero": "Pasajero_126",
+    "destino": "Bogotá",
+    "categoriaTiquete": "M",
+    "peso": 16
+  },
+  {
+    "pasajero": "Pasajero_127",
+    "destino": "Barranquilla",
+    "categoriaTiquete": "S",
+    "peso": 9
+  },
+  {
+    "pasajero": "Pasajero_128",
+    "destino": "Bogotá",
+    "categoriaTiquete": "L",
+    "peso": 29
+  },
+  {
+    "pasajero": "Pasajero_129",
+    "destino": "Medellín",
+    "categoriaTiquete": "L",
+    "peso": 21
+  },
+  {
+    "pasajero": "Pasajero_130",
+    "destino": "Bucaramanga",
+    "categoriaTiquete": "L",
+    "peso": 9
+  },
+  {
+    "pasajero": "Pasajero_131",
+    "destino": "Barranquilla",
+    "categoriaTiquete": "M",
+    "peso": 11
+  },
+  {
+    "pasajero": "Pasajero_132",
+    "destino": "Barranquilla",
+    "categoriaTiquete": "L",
+    "peso": 30
+  },
+  {
+    "pasajero": "Pasajero_133",
+    "destino": "Barranquilla",
+    "categoriaTiquete": "L",
+    "peso": 21
+  },
+  {
+    "pasajero": "Pasajero_134",
+    "destino": "Medellín",
+    "categoriaTiquete": "M",
+    "peso": 18
+  },
+  {
+    "pasajero": "Pasajero_135",
+    "destino": "Medellín",
+    "categoriaTiquete": "M",
+    "peso": 5
+  },
+  {
+    "pasajero": "Pasajero_136",
+    "destino": "Bucaramanga",
+    "categoriaTiquete": "L",
+    "peso": 21
+  },
+  {
+    "pasajero": "Pasajero_137",
+    "destino": "Cali",
+    "categoriaTiquete": "S",
+    "peso": 4
+  },
+  {
+    "pasajero": "Pasajero_138",
+    "destino": "Medellín",
+    "categoriaTiquete": "L",
+    "peso": 7
+  },
+  {
+    "pasajero": "Pasajero_139",
+    "destino": "Bogotá",
+    "categoriaTiquete": "S",
+    "peso": 2
+  },
+  {
+    "pasajero": "Pasajero_140",
+    "destino": "Cali",
+    "categoriaTiquete": "S",
+    "peso": 8
+  },
+  {
+    "pasajero": "Pasajero_141",
+    "destino": "Bucaramanga",
+    "categoriaTiquete": "S",
+    "peso": 9
+  },
+  {
+    "pasajero": "Pasajero_142",
+    "destino": "Bucaramanga",
+    "categoriaTiquete": "M",
+    "peso": 19
+  },
+  {
+    "pasajero": "Pasajero_143",
+    "destino": "Bogotá",
+    "categoriaTiquete": "S",
+    "peso": 6
+  },
+  {
+    "pasajero": "Pasajero_144",
+    "destino": "Cali",
+    "categoriaTiquete": "L",
+    "peso": 18
+  },
+  {
+    "pasajero": "Pasajero_145",
+    "destino": "Barranquilla",
+    "categoriaTiquete": "S",
+    "peso": 7
+  },
+  {
+    "pasajero": "Pasajero_146",
+    "destino": "Cali",
+    "categoriaTiquete": "S",
+    "peso": 2
+  },
+  {
+    "pasajero": "Pasajero_147",
+    "destino": "Medellín",
+    "categoriaTiquete": "M",
+    "peso": 6
+  },
+  {
+    "pasajero": "Pasajero_148",
+    "destino": "Cali",
+    "categoriaTiquete": "S",
+    "peso": 9
+  },
+  {
+    "pasajero": "Pasajero_149",
+    "destino": "Barranquilla",
+    "categoriaTiquete": "M",
+    "peso": 14
+  },
+  {
+    "pasajero": "Pasajero_150",
+    "destino": "Barranquilla",
+    "categoriaTiquete": "L",
+    "peso": 16
+  },
+  {
+    "pasajero": "Pasajero_151",
+    "destino": "Bogotá",
+    "categoriaTiquete": "S",
+    "peso": 1
+  },
+  {
+    "pasajero": "Pasajero_152",
+    "destino": "Bucaramanga",
+    "categoriaTiquete": "L",
+    "peso": 14
+  },
+  {
+    "pasajero": "Pasajero_153",
+    "destino": "Bucaramanga",
+    "categoriaTiquete": "L",
+    "peso": 13
+  },
+  {
+    "pasajero": "Pasajero_154",
+    "destino": "Bogotá",
+    "categoriaTiquete": "M",
+    "peso": 18
+  },
+  {
+    "pasajero": "Pasajero_155",
+    "destino": "Barranquilla",
+    "categoriaTiquete": "M",
+    "peso": 7
+  },
+  {
+    "pasajero": "Pasajero_156",
+    "destino": "Barranquilla",
+    "categoriaTiquete": "L",
+    "peso": 3
+  },
+  {
+    "pasajero": "Pasajero_157",
+    "destino": "Bucaramanga",
+    "categoriaTiquete": "L",
+    "peso": 4
+  },
+  {
+    "pasajero": "Pasajero_158",
+    "destino": "Cali",
+    "categoriaTiquete": "S",
+    "peso": 10
+  },
+  {
+    "pasajero": "Pasajero_159",
+    "destino": "Medellín",
+    "categoriaTiquete": "M",
+    "peso": 3
+  },
+  {
+    "pasajero": "Pasajero_160",
+    "destino": "Medellín",
+    "categoriaTiquete": "S",
+    "peso": 5
+  },
+  {
+    "pasajero": "Pasajero_161",
+    "destino": "Cali",
+    "categoriaTiquete": "M",
+    "peso": 3
+  },
+  {
+    "pasajero": "Pasajero_162",
+    "destino": "Bogotá",
+    "categoriaTiquete": "S",
+    "peso": 9
+  },
+  {
+    "pasajero": "Pasajero_163",
+    "destino": "Bogotá",
+    "categoriaTiquete": "M",
+    "peso": 6
+  },
+  {
+    "pasajero": "Pasajero_164",
+    "destino": "Medellín",
+    "categoriaTiquete": "L",
+    "peso": 12
+  },
+  {
+    "pasajero": "Pasajero_165",
+    "destino": "Bogotá",
+    "categoriaTiquete": "S",
+    "peso": 1
+  },
+  {
+    "pasajero": "Pasajero_166",
+    "destino": "Bucaramanga",
+    "categoriaTiquete": "L",
+    "peso": 22
+  },
+  {
+    "pasajero": "Pasajero_167",
+    "destino": "Bogotá",
+    "categoriaTiquete": "S",
+    "peso": 4
+  },
+  {
+    "pasajero": "Pasajero_168",
+    "destino": "Bucaramanga",
+    "categoriaTiquete": "M",
+    "peso": 18
+  },
+  {
+    "pasajero": "Pasajero_169",
+    "destino": "Barranquilla",
+    "categoriaTiquete": "S",
+    "peso": 3
+  },
+  {
+    "pasajero": "Pasajero_170",
+    "destino": "Bogotá",
+    "categoriaTiquete": "M",
+    "peso": 17
+  },
+  {
+    "pasajero": "Pasajero_171",
+    "destino": "Bucaramanga",
+    "categoriaTiquete": "L",
+    "peso": 12
+  },
+  {
+    "pasajero": "Pasajero_172",
+    "destino": "Cali",
+    "categoriaTiquete": "L",
+    "peso": 28
+  },
+  {
+    "pasajero": "Pasajero_173",
+    "destino": "Barranquilla",
+    "categoriaTiquete": "S",
+    "peso": 9
+  },
+  {
+    "pasajero": "Pasajero_174",
+    "destino": "Medellín",
+    "categoriaTiquete": "S",
+    "peso": 3
+  },
+  {
+    "pasajero": "Pasajero_175",
+    "destino": "Medellín",
+    "categoriaTiquete": "L",
+    "peso": 13
+  },
+  {
+    "pasajero": "Pasajero_176",
+    "destino": "Bucaramanga",
+    "categoriaTiquete": "L",
+    "peso": 29
+  },
+  {
+    "pasajero": "Pasajero_177",
+    "destino": "Medellín",
+    "categoriaTiquete": "M",
+    "peso": 14
+  },
+  {
+    "pasajero": "Pasajero_178",
+    "destino": "Medellín",
+    "categoriaTiquete": "S",
+    "peso": 2
+  },
+  {
+    "pasajero": "Pasajero_179",
+    "destino": "Bogotá",
+    "categoriaTiquete": "L",
+    "peso": 9
+  },
+  {
+    "pasajero": "Pasajero_180",
+    "destino": "Cali",
+    "categoriaTiquete": "S",
+    "peso": 5
+  },
+  {
+    "pasajero": "Pasajero_181",
+    "destino": "Bucaramanga",
+    "categoriaTiquete": "M",
+    "peso": 16
+  },
+  {
+    "pasajero": "Pasajero_182",
+    "destino": "Bucaramanga",
+    "categoriaTiquete": "M",
+    "peso": 5
+  },
+  {
+    "pasajero": "Pasajero_183",
+    "destino": "Cali",
+    "categoriaTiquete": "L",
+    "peso": 25
+  },
+  {
+    "pasajero": "Pasajero_184",
+    "destino": "Medellín",
+    "categoriaTiquete": "S",
+    "peso": 5
+  },
+  {
+    "pasajero": "Pasajero_185",
+    "destino": "Barranquilla",
+    "categoriaTiquete": "S",
+    "peso": 8
+  },
+  {
+    "pasajero": "Pasajero_186",
+    "destino": "Bogotá",
+    "categoriaTiquete": "L",
+    "peso": 12
+  },
+  {
+    "pasajero": "Pasajero_187",
+    "destino": "Barranquilla",
+    "categoriaTiquete": "L",
+    "peso": 11
+  },
+  {
+    "pasajero": "Pasajero_188",
+    "destino": "Barranquilla",
+    "categoriaTiquete": "L",
+    "peso": 15
+  },
+  {
+    "pasajero": "Pasajero_189",
+    "destino": "Cali",
+    "categoriaTiquete": "M",
+    "peso": 4
+  },
+  {
+    "pasajero": "Pasajero_190",
+    "destino": "Bogotá",
+    "categoriaTiquete": "L",
+    "peso": 5
+  },
+  {
+    "pasajero": "Pasajero_191",
+    "destino": "Cali",
+    "categoriaTiquete": "S",
+    "peso": 1
+  },
+  {
+    "pasajero": "Pasajero_192",
+    "destino": "Bucaramanga",
+    "categoriaTiquete": "M",
+    "peso": 16
+  },
+  {
+    "pasajero": "Pasajero_193",
+    "destino": "Bogotá",
+    "categoriaTiquete": "S",
+    "peso": 10
+  },
+  {
+    "pasajero": "Pasajero_194",
+    "destino": "Barranquilla",
+    "categoriaTiquete": "M",
+    "peso": 18
+  },
+  {
+    "pasajero": "Pasajero_195",
+    "destino": "Cali",
+    "categoriaTiquete": "S",
+    "peso": 10
+  },
+  {
+    "pasajero": "Pasajero_196",
+    "destino": "Barranquilla",
+    "categoriaTiquete": "M",
+    "peso": 8
+  },
+  {
+    "pasajero": "Pasajero_197",
+    "destino": "Cali",
+    "categoriaTiquete": "S",
+    "peso": 4
+  },
+  {
+    "pasajero": "Pasajero_198",
+    "destino": "Cali",
+    "categoriaTiquete": "M",
+    "peso": 13
+  },
+  {
+    "pasajero": "Pasajero_199",
+    "destino": "Bucaramanga",
+    "categoriaTiquete": "S",
+    "peso": 5
+  },
+  {
+    "pasajero": "Pasajero_200",
+    "destino": "Cali",
+    "categoriaTiquete": "L",
+    "peso": 2
+  },
+  {
+    "pasajero": "Pasajero_201",
+    "destino": "Medellín",
+    "categoriaTiquete": "M",
+    "peso": 3
+  },
+  {
+    "pasajero": "Pasajero_202",
+    "destino": "Medellín",
+    "categoriaTiquete": "S",
+    "peso": 5
+  },
+  {
+    "pasajero": "Pasajero_203",
+    "destino": "Bucaramanga",
+    "categoriaTiquete": "M",
+    "peso": 20
+  },
+  {
+    "pasajero": "Pasajero_204",
+    "destino": "Bucaramanga",
+    "categoriaTiquete": "L",
+    "peso": 7
+  },
+  {
+    "pasajero": "Pasajero_205",
+    "destino": "Cali",
+    "categoriaTiquete": "S",
+    "peso": 8
+  },
+  {
+    "pasajero": "Pasajero_206",
+    "destino": "Bucaramanga",
+    "categoriaTiquete": "M",
+    "peso": 17
+  },
+  {
+    "pasajero": "Pasajero_207",
+    "destino": "Medellín",
+    "categoriaTiquete": "M",
+    "peso": 12
+  },
+  {
+    "pasajero": "Pasajero_208",
+    "destino": "Cali",
+    "categoriaTiquete": "S",
+    "peso": 7
+  },
+  {
+    "pasajero": "Pasajero_209",
+    "destino": "Bogotá",
+    "categoriaTiquete": "M",
+    "peso": 15
+  },
+  {
+    "pasajero": "Pasajero_210",
+    "destino": "Cali",
+    "categoriaTiquete": "S",
+    "peso": 8
+  },
+  {
+    "pasajero": "Pasajero_211",
+    "destino": "Medellín",
+    "categoriaTiquete": "L",
+    "peso": 23
+  },
+  {
+    "pasajero": "Pasajero_212",
+    "destino": "Medellín",
+    "categoriaTiquete": "S",
+    "peso": 7
+  },
+  {
+    "pasajero": "Pasajero_213",
+    "destino": "Bucaramanga",
+    "categoriaTiquete": "S",
+    "peso": 2
+  },
+  {
+    "pasajero": "Pasajero_214",
+    "destino": "Barranquilla",
+    "categoriaTiquete": "M",
+    "peso": 11
+  },
+  {
+    "pasajero": "Pasajero_215",
+    "destino": "Barranquilla",
+    "categoriaTiquete": "S",
+    "peso": 10
+  },
+  {
+    "pasajero": "Pasajero_216",
+    "destino": "Barranquilla",
+    "categoriaTiquete": "M",
+    "peso": 18
+  },
+  {
+    "pasajero": "Pasajero_217",
+    "destino": "Bucaramanga",
+    "categoriaTiquete": "S",
+    "peso": 4
+  },
+  {
+    "pasajero": "Pasajero_218",
+    "destino": "Barranquilla",
+    "categoriaTiquete": "S",
+    "peso": 9
+  },
+  {
+    "pasajero": "Pasajero_219",
+    "destino": "Bucaramanga",
+    "categoriaTiquete": "S",
+    "peso": 5
+  },
+  {
+    "pasajero": "Pasajero_220",
+    "destino": "Bucaramanga",
+    "categoriaTiquete": "L",
+    "peso": 30
+  },
+  {
+    "pasajero": "Pasajero_221",
+    "destino": "Barranquilla",
+    "categoriaTiquete": "S",
+    "peso": 8
+  },
+  {
+    "pasajero": "Pasajero_222",
+    "destino": "Medellín",
+    "categoriaTiquete": "M",
+    "peso": 11
+  },
+  {
+    "pasajero": "Pasajero_223",
+    "destino": "Bogotá",
+    "categoriaTiquete": "M",
+    "peso": 2
+  },
+  {
+    "pasajero": "Pasajero_224",
+    "destino": "Bucaramanga",
+    "categoriaTiquete": "S",
+    "peso": 1
+  },
+  {
+    "pasajero": "Pasajero_225",
+    "destino": "Bogotá",
+    "categoriaTiquete": "M",
+    "peso": 1
+  },
+  {
+    "pasajero": "Pasajero_226",
+    "destino": "Barranquilla",
+    "categoriaTiquete": "M",
+    "peso": 20
+  },
+  {
+    "pasajero": "Pasajero_227",
+    "destino": "Cali",
+    "categoriaTiquete": "M",
+    "peso": 18
+  },
+  {
+    "pasajero": "Pasajero_228",
+    "destino": "Bucaramanga",
+    "categoriaTiquete": "L",
+    "peso": 25
+  },
+  {
+    "pasajero": "Pasajero_229",
+    "destino": "Bucaramanga",
+    "categoriaTiquete": "S",
+    "peso": 6
+  },
+  {
+    "pasajero": "Pasajero_230",
+    "destino": "Medellín",
+    "categoriaTiquete": "L",
+    "peso": 2
+  },
+  {
+    "pasajero": "Pasajero_231",
+    "destino": "Bogotá",
+    "categoriaTiquete": "S",
+    "peso": 1
+  },
+  {
+    "pasajero": "Pasajero_232",
+    "destino": "Medellín",
+    "categoriaTiquete": "L",
+    "peso": 1
+  },
+  {
+    "pasajero": "Pasajero_233",
+    "destino": "Cali",
+    "categoriaTiquete": "L",
+    "peso": 1
+  },
+  {
+    "pasajero": "Pasajero_234",
+    "destino": "Medellín",
+    "categoriaTiquete": "L",
+    "peso": 11
+  },
+  {
+    "pasajero": "Pasajero_235",
+    "destino": "Bogotá",
+    "categoriaTiquete": "L",
+    "peso": 18
+  },
+  {
+    "pasajero": "Pasajero_236",
+    "destino": "Bucaramanga",
+    "categoriaTiquete": "S",
+    "peso": 9
+  },
+  {
+    "pasajero": "Pasajero_237",
+    "destino": "Bucaramanga",
+    "categoriaTiquete": "L",
+    "peso": 24
+  },
+  {
+    "pasajero": "Pasajero_238",
+    "destino": "Medellín",
+    "categoriaTiquete": "M",
+    "peso": 4
+  },
+  {
+    "pasajero": "Pasajero_239",
+    "destino": "Bucaramanga",
+    "categoriaTiquete": "L",
+    "peso": 23
+  },
+  {
+    "pasajero": "Pasajero_240",
+    "destino": "Cali",
+    "categoriaTiquete": "L",
+    "peso": 30
+  },
+  {
+    "pasajero": "Pasajero_241",
+    "destino": "Medellín",
+    "categoriaTiquete": "M",
+    "peso": 19
+  },
+  {
+    "pasajero": "Pasajero_242",
+    "destino": "Barranquilla",
+    "categoriaTiquete": "S",
+    "peso": 6
+  },
+  {
+    "pasajero": "Pasajero_243",
+    "destino": "Bogotá",
+    "categoriaTiquete": "M",
+    "peso": 9
+  },
+  {
+    "pasajero": "Pasajero_244",
+    "destino": "Bucaramanga",
+    "categoriaTiquete": "S",
+    "peso": 3
+  },
+  {
+    "pasajero": "Pasajero_245",
+    "destino": "Bucaramanga",
+    "categoriaTiquete": "L",
+    "peso": 26
+  },
+  {
+    "pasajero": "Pasajero_246",
+    "destino": "Medellín",
+    "categoriaTiquete": "S",
+    "peso": 2
+  },
+  {
+    "pasajero": "Pasajero_247",
+    "destino": "Bucaramanga",
+    "categoriaTiquete": "S",
+    "peso": 7
+  },
+  {
+    "pasajero": "Pasajero_248",
+    "destino": "Medellín",
+    "categoriaTiquete": "L",
+    "peso": 8
+  },
+  {
+    "pasajero": "Pasajero_249",
+    "destino": "Barranquilla",
+    "categoriaTiquete": "L",
+    "peso": 10
+  },
+  {
+    "pasajero": "Pasajero_250",
+    "destino": "Cali",
+    "categoriaTiquete": "M",
+    "peso": 5
+  },
+  {
+    "pasajero": "Pasajero_251",
+    "destino": "Cali",
+    "categoriaTiquete": "S",
+    "peso": 5
+  },
+  {
+    "pasajero": "Pasajero_252",
+    "destino": "Barranquilla",
+    "categoriaTiquete": "M",
+    "peso": 8
+  },
+  {
+    "pasajero": "Pasajero_253",
+    "destino": "Cali",
+    "categoriaTiquete": "M",
+    "peso": 11
+  },
+  {
+    "pasajero": "Pasajero_254",
+    "destino": "Bogotá",
+    "categoriaTiquete": "L",
+    "peso": 24
+  },
+  {
+    "pasajero": "Pasajero_255",
+    "destino": "Medellín",
+    "categoriaTiquete": "S",
+    "peso": 6
+  },
+  {
+    "pasajero": "Pasajero_256",
+    "destino": "Medellín",
+    "categoriaTiquete": "M",
+    "peso": 4
+  },
+  {
+    "pasajero": "Pasajero_257",
+    "destino": "Bogotá",
+    "categoriaTiquete": "M",
+    "peso": 2
+  },
+  {
+    "pasajero": "Pasajero_258",
+    "destino": "Barranquilla",
+    "categoriaTiquete": "L",
+    "peso": 29
+  },
+  {
+    "pasajero": "Pasajero_259",
+    "destino": "Barranquilla",
+    "categoriaTiquete": "L",
+    "peso": 11
+  },
+  {
+    "pasajero": "Pasajero_260",
+    "destino": "Medellín",
+    "categoriaTiquete": "L",
+    "peso": 22
+  },
+  {
+    "pasajero": "Pasajero_261",
+    "destino": "Barranquilla",
+    "categoriaTiquete": "S",
+    "peso": 6
+  },
+  {
+    "pasajero": "Pasajero_262",
+    "destino": "Bogotá",
+    "categoriaTiquete": "M",
+    "peso": 4
+  },
+  {
+    "pasajero": "Pasajero_263",
+    "destino": "Bucaramanga",
+    "categoriaTiquete": "L",
+    "peso": 30
+  },
+  {
+    "pasajero": "Pasajero_264",
+    "destino": "Bucaramanga",
+    "categoriaTiquete": "S",
+    "peso": 8
+  },
+  {
+    "pasajero": "Pasajero_265",
+    "destino": "Bogotá",
+    "categoriaTiquete": "M",
+    "peso": 3
+  },
+  {
+    "pasajero": "Pasajero_266",
+    "destino": "Bogotá",
+    "categoriaTiquete": "L",
+    "peso": 16
+  },
+  {
+    "pasajero": "Pasajero_267",
+    "destino": "Cali",
+    "categoriaTiquete": "L",
+    "peso": 9
+  },
+  {
+    "pasajero": "Pasajero_268",
+    "destino": "Barranquilla",
+    "categoriaTiquete": "S",
+    "peso": 4
+  },
+  {
+    "pasajero": "Pasajero_269",
+    "destino": "Barranquilla",
+    "categoriaTiquete": "S",
+    "peso": 2
+  },
+  {
+    "pasajero": "Pasajero_270",
+    "destino": "Barranquilla",
+    "categoriaTiquete": "M",
+    "peso": 2
+  },
+  {
+    "pasajero": "Pasajero_271",
+    "destino": "Bogotá",
+    "categoriaTiquete": "L",
+    "peso": 24
+  },
+  {
+    "pasajero": "Pasajero_272",
+    "destino": "Bucaramanga",
+    "categoriaTiquete": "S",
+    "peso": 8
+  },
+  {
+    "pasajero": "Pasajero_273",
+    "destino": "Bogotá",
+    "categoriaTiquete": "L",
+    "peso": 12
+  },
+  {
+    "pasajero": "Pasajero_274",
+    "destino": "Cali",
+    "categoriaTiquete": "S",
+    "peso": 7
+  },
+  {
+    "pasajero": "Pasajero_275",
+    "destino": "Barranquilla",
+    "categoriaTiquete": "L",
+    "peso": 10
+  },
+  {
+    "pasajero": "Pasajero_276",
+    "destino": "Cali",
+    "categoriaTiquete": "S",
+    "peso": 9
+  },
+  {
+    "pasajero": "Pasajero_277",
+    "destino": "Medellín",
+    "categoriaTiquete": "L",
+    "peso": 4
+  },
+  {
+    "pasajero": "Pasajero_278",
+    "destino": "Bogotá",
+    "categoriaTiquete": "M",
+    "peso": 18
+  },
+  {
+    "pasajero": "Pasajero_279",
+    "destino": "Medellín",
+    "categoriaTiquete": "M",
+    "peso": 1
+  },
+  {
+    "pasajero": "Pasajero_280",
+    "destino": "Medellín",
+    "categoriaTiquete": "M",
+    "peso": 6
+  },
+  {
+    "pasajero": "Pasajero_281",
+    "destino": "Bucaramanga",
+    "categoriaTiquete": "M",
+    "peso": 9
+  },
+  {
+    "pasajero": "Pasajero_282",
+    "destino": "Barranquilla",
+    "categoriaTiquete": "S",
+    "peso": 9
+  },
+  {
+    "pasajero": "Pasajero_283",
+    "destino": "Medellín",
+    "categoriaTiquete": "M",
+    "peso": 1
+  },
+  {
+    "pasajero": "Pasajero_284",
+    "destino": "Bogotá",
+    "categoriaTiquete": "L",
+    "peso": 13
+  },
+  {
+    "pasajero": "Pasajero_285",
+    "destino": "Medellín",
+    "categoriaTiquete": "M",
+    "peso": 20
+  },
+  {
+    "pasajero": "Pasajero_286",
+    "destino": "Medellín",
+    "categoriaTiquete": "M",
+    "peso": 11
+  },
+  {
+    "pasajero": "Pasajero_287",
+    "destino": "Bucaramanga",
+    "categoriaTiquete": "M",
+    "peso": 18
+  },
+  {
+    "pasajero": "Pasajero_288",
+    "destino": "Bucaramanga",
+    "categoriaTiquete": "L",
+    "peso": 12
+  },
+  {
+    "pasajero": "Pasajero_289",
+    "destino": "Medellín",
+    "categoriaTiquete": "M",
+    "peso": 19
+  },
+  {
+    "pasajero": "Pasajero_290",
+    "destino": "Cali",
+    "categoriaTiquete": "L",
+    "peso": 5
+  },
+  {
+    "pasajero": "Pasajero_291",
+    "destino": "Cali",
+    "categoriaTiquete": "S",
+    "peso": 10
+  },
+  {
+    "pasajero": "Pasajero_292",
+    "destino": "Bucaramanga",
+    "categoriaTiquete": "S",
+    "peso": 7
+  },
+  {
+    "pasajero": "Pasajero_293",
+    "destino": "Bogotá",
+    "categoriaTiquete": "M",
+    "peso": 2
+  },
+  {
+    "pasajero": "Pasajero_294",
+    "destino": "Bogotá",
+    "categoriaTiquete": "L",
+    "peso": 20
+  },
+  {
+    "pasajero": "Pasajero_295",
+    "destino": "Bucaramanga",
+    "categoriaTiquete": "S",
+    "peso": 6
+  },
+  {
+    "pasajero": "Pasajero_296",
+    "destino": "Barranquilla",
+    "categoriaTiquete": "L",
+    "peso": 1
+  },
+  {
+    "pasajero": "Pasajero_297",
+    "destino": "Bogotá",
+    "categoriaTiquete": "M",
+    "peso": 7
+  },
+  {
+    "pasajero": "Pasajero_298",
+    "destino": "Cali",
+    "categoriaTiquete": "M",
+    "peso": 12
+  },
+  {
+    "pasajero": "Pasajero_299",
+    "destino": "Cali",
+    "categoriaTiquete": "M",
+    "peso": 16
+  },
+  {
+    "pasajero": "Pasajero_300",
+    "destino": "Barranquilla",
+    "categoriaTiquete": "M",
+    "peso": 1
+  }
+]

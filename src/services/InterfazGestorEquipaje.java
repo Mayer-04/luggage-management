@@ -83,14 +83,14 @@ public class InterfazGestorEquipaje {
     }
 
     public void registrarMultiplesEquipajes() {
-        System.out.print("Elige la cantidad de equipajes a registrar (500, 700, 1000): ");
+        System.out.print("Elige la cantidad de equipajes a registrar (300, 500, 700, 1000): ");
         String opcion = scanner.nextLine().trim();
 
         String rutaArchivo = "./src/resources/luggage_" + opcion + ".json";
         Path archivo = Path.of(rutaArchivo);
 
         if (!Files.exists(archivo)) {
-            System.out.printf("El archivo %s no existe. Intenta con 500, 700 o 1000.%n", rutaArchivo);
+            System.out.printf("El archivo %s no existe. Intenta con 300, 500, 700 o 1000.%n", rutaArchivo);
             return;
         }
 
@@ -128,6 +128,11 @@ public class InterfazGestorEquipaje {
         }
 
         List<Equipaje> noAbordados = Avion.abordarVuelo(bodegas, bodegasAvion);
+
+        if (!Avion.verificarMinimoPorVuelo(bodegasAvion, 50)) {
+            System.out.println("No se puede despegar: algún vuelo no cumple con el mínimo de 50 equipajes.");
+            return;
+        }
 
         Validacion.mostrarResumenNoAbordadas(noAbordados);
 

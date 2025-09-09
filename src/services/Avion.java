@@ -55,6 +55,23 @@ public class Avion {
     }
 
 
+    public static boolean verificarMinimoPorVuelo(BodegaAvion[] vuelos, int minimo) {
+        if (vuelos == null) return false;
+
+        for (BodegaAvion vuelo : vuelos) {
+            if (vuelo.size() < minimo) {
+                System.out.printf(
+                        "⚠️ El vuelo con destino %s no cumple el mínimo de %d equipajes (actual: %d)%n",
+                        vuelo.getDestino(), minimo, vuelo.size()
+                );
+                return false;
+            }
+        }
+        return true;
+    }
+
+
+
     /**
      * Coloca las maletas de una bodega en un vuelo en orden por categoría de tiquete (L > M > S).
      * <p>
