@@ -10,8 +10,29 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
 
+/**
+ * La clase {@code LuggageJsonReader} permite leer datos de equipajes
+ * desde un archivo JSON y convertirlos en una lista de objetos {@link Equipaje}.
+ * <p>
+ * Utiliza la librería {@link Gson} para realizar la deserialización.
+ * </p>
+ * <p>
+ * Ejemplo de uso:
+ * <pre>{@code
+ * LuggageJsonReader lector = new LuggageJsonReader("equipajes.json");
+ * List<Equipaje> lista = reader.cargarDatos();
+ * }</pre>
+ */
 public class LuggageJsonReader {
+
+    /**
+     * Instancia de {@link Gson} utilizada para la conversión JSON ↔ Objetos.
+     */
     private final Gson gson = new Gson();
+
+    /**
+     * Ruta del archivo JSON que contiene la información de los equipajes.
+     */
     private final Path path;
 
     public LuggageJsonReader(String filePath) {

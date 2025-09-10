@@ -1,1 +1,0 @@
-packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"datastructures"},{"l":"datastructures.list"},{"l":"datastructures.queue"},{"l":"datastructures.stack"},{"l":"domain"},{"l":"services"},{"l":"util"}];updateSearchResults();

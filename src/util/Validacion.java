@@ -3,6 +3,14 @@ package util;
 import datastructures.list.List;
 import domain.Equipaje;
 
+/**
+ * La clase {@code Validacion} proporciona métodos utilitarios
+ * para validar datos relacionados con equipajes y mostrar resúmenes
+ * de aquellos que no pudieron ser abordados en el avión.
+ * <p>
+ * Esta clase no necesita ser instanciada, ya que todos sus métodos son estáticos.
+ * </p>
+ */
 public class Validacion {
 
     /**
@@ -24,6 +32,15 @@ public class Validacion {
         };
     }
 
+    /**
+     * Muestra en consola un resumen de los equipajes que no pudieron ser abordados.
+     * <p>
+     * El resumen indica la cantidad total de equipajes no abordados y
+     * un desglose por destino. Si la lista está vacía, no se muestra nada.
+     * </p>
+     *
+     * @param noAbordadas lista de equipajes que no pudieron ser abordados
+     */
     public static void mostrarResumenNoAbordadas(List<Equipaje> noAbordadas) {
         if (noAbordadas.isEmpty()) {
             return;

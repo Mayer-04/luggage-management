@@ -3,24 +3,25 @@ package datastructures.queue;
 import java.util.Iterator;
 
 /**
- * Implementación genérica de una cola usando un arreglo dinámico.
+ * La clase {@code Queue} representa una cola genérica basada en un
+ * arreglo dinámico.
  * <p>
- * Una cola sigue el principio <b>FIFO (First In, First Out)</b>:
- * el primer elemento en entrar es el primero en salir.
+ * Una cola sigue el principio <strong>FIFO (First In, First Out)</strong>:
+ * El primer elemento en entrar es el primero en salir.
  * </p>
  *
- * <h2>Ejemplo de uso</h2>
+ * Ejemplo de uso:
  * <pre>{@code
  * Queue<String> queue = new Queue<>();
  * queue.enqueue("A");
  * queue.enqueue("B");
  * queue.enqueue("C");
  *
- * System.out.println(queue.dequeue()); // Imprime "A"
- * System.out.println(queue.peek());    // Imprime "B"
+ * System.out.println(queue.dequeue()); // "A"
+ * System.out.println(queue.peek());    // "B"
  * }</pre>
  *
- * @param <T> tipo de elementos que contendrá la cola
+ * @param <T> tipo de los elementos almacenados en la cola
  */
 @SuppressWarnings("unchecked")
 public class Queue<T> implements Iterable<T> {
@@ -36,9 +37,13 @@ public class Queue<T> implements Iterable<T> {
     }
 
     /**
-     * Inserta un elemento al final de la cola (operación de encolado).
+     * Inserta un elemento al final de la cola.
+     * <p>
+     * Si el arreglo interno está lleno (es decir, {@code size == elements.length}),
+     * la capacidad se duplica automáticamente antes de insertar el nuevo elemento.
+     * </p>
      *
-     * @param item el elemento a agregar
+     * @param item el elemento a agregar al final de la cola
      */
     public void enqueue(T item) {
         if (size == elements.length) {
@@ -49,12 +54,24 @@ public class Queue<T> implements Iterable<T> {
     }
 
     /**
-     * Elimina y devuelve el primer elemento de la cola (operación de desencolado).
+     * Elimina y devuelve el primer elemento de la cola.
+     *
+     * <h4>Detalles de implementación</h4>
+     * <ol>
+     *   <li>Guarda el <strong>primer elemento</strong> de la cola en una variable para devolverlo al final.</li>
+     *   <li>Mueve todos los demás elementos una posición hacia la izquierda,
+     *       de forma que el segundo elemento pase a ser el primero, el tercer pase a ser el segundo,
+     *       y así hasta el final.</li>
+     *   <li>Deja vacía la última posición (poniéndola en {@code null}) para que no quede ocupando memoria.</li>
+     *   <li>Resta 1 al contador de elementos.</li>
+     *   <li>Si después de quitar un elemento la cola queda usando solo el <em>25%</em> de su espacio,
+     *       reduce el tamaño del arreglo a la mitad.</li>
+     * </ol>
      *
      * @return el elemento que estaba en el frente de la cola
      */
     public T dequeue() {
-        var item = elements[0];
+        T item = elements[0];
 
         for (int i = 1; i < size; i++) {
             elements[i - 1] = elements[i];
@@ -63,7 +80,7 @@ public class Queue<T> implements Iterable<T> {
         elements[size - 1] = null;
 
         size--;
-        
+
         if (size > 0 && size == elements.length / 4) {
             resize(elements.length / 2);
         }
@@ -72,7 +89,7 @@ public class Queue<T> implements Iterable<T> {
     }
 
     /**
-     * Devuelve el elemento al frente de la cola sin eliminarlo.
+     * Devuelve el elemento al <strong>frente</strong> de la cola sin eliminarlo.
      *
      * @return el elemento al frente de la cola
      */
@@ -113,16 +130,13 @@ public class Queue<T> implements Iterable<T> {
      * o al desencolar cuando el arreglo queda demasiado vacío.
      * </p>
      *
-     * @param newCapacity la nueva capacidad del arreglo
+     * @param newCapacity la nueva capacidad que tendra el arreglo
      */
     private void resize(int newCapacity) {
         T[] newArray = (T[]) new Object[newCapacity];
-
-        // if (size >= 0) System.arraycopy(elements, 0, newArray, 0, size);
         for (int i = 0; i < size; i++) {
             newArray[i] = elements[i];
         }
-
         elements = newArray;
     }
 
@@ -138,12 +152,14 @@ public class Queue<T> implements Iterable<T> {
     }
 
     /**
-     * Devuelve una representación en cadena de la cola.
+     * Devuelve una representación en <strong>cadena</strong> de la cola.
      * <p>
      * Los elementos se muestran desde el frente hasta el final.
      * </p>
-     * Las cadenas se muestran entre comillas dobles.
-     *
+     * <p>
+     * Si un elemento es una cadena, se mostrará entre comillas dobles.
+     * Todos los elementos aparecen separados por comas y encerrados entre corchetes.
+     * </p>
      * @return una cadena con el contenido de la cola
      */
     @Override
@@ -183,9 +199,9 @@ public class Queue<T> implements Iterable<T> {
         }
 
         /**
-         * Devuelve el siguiente elemento en el recorrido.
+         * Devuelve el siguiente elemento en la iteración.
          *
-         * @return el siguiente elemento de la cola
+         * @return el siguiente elemento en la iteración <em>(queue)</em>
          */
         @Override
         public T next() {

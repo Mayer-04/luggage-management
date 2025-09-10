@@ -1,15 +1,33 @@
-package services;
+package util;
 
 import domain.BodegaAvion;
 import domain.Equipaje;
 
+/**
+ * La clase {@code Estadisticas} proporciona métodos utilitarios
+ * para mostrar por consola información relevante sobre los vuelos
+ * y sus bodegas de equipajes.
+ *
+ * <p>Ofrece funcionalidades para:</p>
+ * <ul>
+ *   <li>Mostrar estadísticas de cada vuelo (destino, cantidad de pasajeros y peso total).</li>
+ *   <li>Listar los pasajeros a bordo junto con los datos de su equipaje.</li>
+ * </ul>
+ *
+ * @see BodegaAvion
+ * @see Equipaje
+ */
 public class Estadisticas {
 
     /**
-     * Muestra por consola las estadísticas de cada vuelo, incluyendo el destino,
-     * cantidad de pasajeros y peso total transportado.
+     * Muestra por consola las estadísticas de cada vuelo, incluyendo:
+     * <ul>
+     *   <li>El destino del vuelo.</li>
+     *   <li>La cantidad de pasajeros (equipajes registrados).</li>
+     *   <li>El peso total de los equipajes transportados.</li>
+     * </ul>
      *
-     * @param vuelos arreglo de bodegas de avión a mostrar sus estadísticas
+     * @param vuelos arreglo de {@link BodegaAvion} cuyas estadísticas se van a mostrar
      */
     public static void mostrarEstadisticas(BodegaAvion[] vuelos) {
         for (BodegaAvion vuelo : vuelos) {
@@ -29,12 +47,18 @@ public class Estadisticas {
 
     /**
      * Muestra por consola la lista de pasajeros a bordo para cada vuelo.
+     *
      * <p>
-     * Para cada vuelo, se muestra el destino, la cantidad de pasajeros y
-     * su lista de pasajeros con su tiquete y peso.
+     * Para cada vuelo se imprime:
+     * <ul>
+     *   <li>El destino del vuelo.</li>
+     *   <li>La lista de pasajeros con su categoría de tiquete y peso de equipaje.</li>
+     *   <li>El número total de equipajes transportados.</li>
+     * </ul>
+     * Si un vuelo no tiene equipajes registrados, se indica explícitamente.
      * </p>
      *
-     * @param vuelos arreglo de bodegas de avión a mostrar sus pasajeros
+     * @param vuelos arreglo de {@link BodegaAvion} de los que se mostrará la lista de pasajeros
      */
     public static void mostrarListaDePasajeros(BodegaAvion[] vuelos) {
         for (BodegaAvion vuelo : vuelos) {

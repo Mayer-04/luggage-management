@@ -2,17 +2,24 @@ package services;
 
 /**
  * La clase {@code InventarioEquipaje} representa el registro de equipajes
- * en una bodega de avión, controlando las cantidades por categoría (L, M, S)
- * y los límites máximos permitidos.
+ * en una bodega de avión, controlando las cantidades por categoría
+ * ({@code "L"}, {@code "M"}, {@code "S"}) y los límites máximos permitidos.
+ *
  * <p>
- * Proporciona métodos para verificar si queda espacio disponible para una
- * categoría específica, incrementar o decrementar los contadores y obtener
- * el total de equipajes almacenados.
+ * Proporciona métodos para:
+ * <ul>
+ *   <li>Verificar si queda espacio disponible en una categoría.</li>
+ *   <li>Incrementar o decrementar los contadores de equipajes por categoría.</li>
+ *   <li>Obtener el total de equipajes registrados en la bodega.</li>
+ * </ul>
  * </p>
+ *
  * <p>
- * Esta clase debe instanciarse por cada bodega/avión, ya que mantiene
- * estado interno independiente.
+ * Cada instancia de esta clase mantiene un estado interno independiente,
+ * por lo que debe crearse una por cada bodega/avión.
  * </p>
+ *
+ * @see domain.Equipaje
  */
 public class InventarioEquipaje {
 
@@ -22,55 +29,44 @@ public class InventarioEquipaje {
     private int contadorL = 0;
 
     /**
+     * Límite máximo total de equipajes en la bodega.
+     */
+    private static final int LIMITE_TOTAL = 100;
+    /** Límite máximo de equipajes categoría L. */
+    private static final int LIMITE_L = 20;
+    /** Límite máximo de equipajes categoría M. */
+    private static final int LIMITE_M = 30;
+    /** Límite máximo de equipajes categoría S. */
+    private static final int LIMITE_S = 50;
+    /**
      * Cantidad de equipajes categoría M.
      */
     private int contadorM = 0;
-
     /**
      * Cantidad de equipajes categoría S.
      */
     private int contadorS = 0;
 
     /**
-     * Límite máximo total de equipajes en la bodega.
-     */
-    private static final int LIMITE_TOTAL = 100;
-
-    /**
-     * Límite máximo de equipajes categoría L.
-     */
-    private static final int LIMITE_L = 20;
-
-    /**
-     * Límite máximo de equipajes categoría M.
-     */
-    private static final int LIMITE_M = 30;
-
-    /**
-     * Límite máximo de equipajes categoría S.
-     */
-    private static final int LIMITE_S = 50;
-
-    /**
      * Verifica si hay cupo disponible para un equipaje de la categoría
      * especificada.
+     *
      * <p>
-     * La verificación tiene en cuenta dos aspectos:
+     * La verificación tiene en cuenta:
      * <ul>
-     *   <li>La cantidad actual de equipajes en la categoría no debe
-     *       superar el límite máximo para esa categoría.</li>
-     *   <li>El total de equipajes en la bodega no debe superar el
-     *       límite máximo total.</li>
+     *   <li>Que la cantidad actual de equipajes de la categoría no supere
+     *       su límite máximo.</li>
+     *   <li>Que el total de equipajes en la bodega no supere el límite general.</li>
      * </ul>
      * </p>
+     *
      * <p>
-     * Si la categoría es desconocida, se lanza una excepción de tipo
+     * Si la categoría no es válida, se lanza una excepción de tipo
      * {@link IllegalArgumentException}.
      * </p>
      *
-     * @param categoria la categoría del equipaje a verificar
-     * @return {@code true} si hay cupo disponible, {@code false} en caso
-     *         contrario
+     * @param categoria categoría del equipaje ({@code "L"}, {@code "M"}, {@code "S"})
+     * @return {@code true} si hay cupo disponible, {@code false} en caso contrario
      */
     public boolean hayCupoPara(String categoria) {
         int limite;
@@ -98,8 +94,8 @@ public class InventarioEquipaje {
     /**
      * Incrementa el contador de la categoría especificada en 1.
      *
-     * @param categoria La categoría del equipaje ("L", "M", "S").
-     * @throws IllegalArgumentException Si la categoría no es "L", "M" ni "S".
+     * @param categoria categoría del equipaje ({@code "L"}, {@code "M"}, {@code "S"})
+     * @throws IllegalArgumentException si la categoría no es válida
      */
     public void incrementarContadores(String categoria) {
         switch (categoria) {
@@ -113,8 +109,8 @@ public class InventarioEquipaje {
     /**
      * Decrementa el contador de la categoría especificada en 1.
      *
-     * @param categoria La categoría del equipaje ("L", "M", "S").
-     * @throws IllegalArgumentException Si la categoría no es "L", "M" ni "S".
+     * @param categoria categoría del equipaje ({@code "L"}, {@code "M"}, {@code "S"})
+     * @throws IllegalArgumentException si la categoría no es válida
      */
     public void decrementarContadores(String categoria) {
         switch (categoria) {
@@ -128,7 +124,7 @@ public class InventarioEquipaje {
     /**
      * Obtiene la cantidad total de equipajes almacenados en la bodega.
      *
-     * @return La suma de los contadores de las categorías L, M y S.
+     * @return suma de los contadores de las categorías L, M y S
      */
     public int getTotal() {
         return contadorL + contadorM + contadorS;
@@ -137,7 +133,7 @@ public class InventarioEquipaje {
     /**
      * Obtiene la cantidad de equipajes de categoría L.
      *
-     * @return Cantidad de equipajes categoría L.
+     * @return número de equipajes categoría L
      */
     public int getContadorL() {
         return contadorL;
@@ -146,7 +142,7 @@ public class InventarioEquipaje {
     /**
      * Obtiene la cantidad de equipajes de categoría M.
      *
-     * @return Cantidad de equipajes categoría M.
+     * @return número de equipajes categoría M
      */
     public int getContadorM() {
         return contadorM;
@@ -155,7 +151,7 @@ public class InventarioEquipaje {
     /**
      * Obtiene la cantidad de equipajes de categoría S.
      *
-     * @return Cantidad de equipajes categoría S.
+     * @return número de equipajes categoría S
      */
     public int getContadorS() {
         return contadorS;

@@ -5,42 +5,37 @@ import domain.ColaGeneral;
 import domain.Equipaje;
 
 /**
- * La clase {@code Bodegas} proporciona métodos utilitarios para gestionar
- * el almacenamiento de equipajes en distintas bodegas, de acuerdo con su destino.
+ * La clase {@code Bodegas} ofrece métodos para gestionar
+ * la distribución de equipajes en distintas {@link Bodega}s, de acuerdo
+ * con el destino registrado en cada {@link Equipaje}.
+ *
  * <p>
- * Su propósito principal es procesar las maletas de una cola general y guardarlas en la bodega
- * que corresponda según el destino de cada una.
+ * Su función principal es procesar los equipajes de una {@link ColaGeneral}
+ * e insertarlos en la bodega correspondiente. Esto permite centralizar
+ * la lógica de asignación de maletas según el destino.
  * </p>
  *
- * <p><strong>Ejemplo de uso:</strong></p>
- * <pre>{@code
- * ColaGeneral cola = new ColaGeneral();
- * // se agregan maletas a la cola
- *
- * Bodega[] bodegas = { new Bodega("Bogotá"), new Bodega("Cali") };
- *
- * Bodegas.procesarEquipaje(cola, bodegas);
- * }</pre>
- *
- * @see domain.Bodega
- * @see domain.ColaGeneral
- * @see domain.Equipaje
+ * @see Bodega
+ * @see ColaGeneral
+ * @see Equipaje
  */
 public class Bodegas {
 
     /**
-     * Procesa todos los equipajes contenidos en una {@link ColaGeneral} y los distribuye
-     * en el arreglo de {@link Bodega} recibido como parámetro.
-     * <p>
-     * El método se encarga de:
+     * Procesa todos los equipajes contenidos en una {@link ColaGeneral}
+     * y los distribuye en el arreglo de {@link Bodega} recibido como parámetro.
+     *
+     * <p>El método realiza los siguientes pasos:</p>
      * <ul>
-     *   <li>Extraer cada equipaje de la cola.</li>
-     *   <li>Obtener el destino del equipaje.</li>
-     *   <li>Comparar el destino del equipaje con el destino de cada bodega.</li>
-     *   <li>Colocar la maleta en la bodega correspondiente cuando hay coincidencia.</li>
+     *   <li>Extrae cada equipaje de la cola.</li>
+     *   <li>Obtiene el destino del equipaje.</li>
+     *   <li>Busca en el arreglo de bodegas aquella cuyo destino coincide.</li>
+     *   <li>Inserta el equipaje en la bodega correspondiente.</li>
      * </ul>
-     * Una vez insertado el equipaje en la bodega adecuada, se detiene la búsqueda
-     * en el resto de bodegas para optimizar el proceso.
+     *
+     * <p>
+     * Una vez encontrado el destino correcto e insertado el equipaje,
+     * se detiene la búsqueda en el resto de bodegas para optimizar el proceso.
      * </p>
      *
      * @param cola la cola general que contiene los equipajes pendientes de procesar
@@ -52,9 +47,7 @@ public class Bodegas {
             String destinoEquipaje = equipaje.destino();
 
             for (Bodega bodega : bodegas) {
-                String bodegaDestino = bodega.getDestino();
-
-                if (destinoEquipaje.equals(bodegaDestino)) {
+                if (destinoEquipaje.equals(bodega.getDestino())) {
                     bodega.agregarEquipaje(equipaje);
                     break;
                 }

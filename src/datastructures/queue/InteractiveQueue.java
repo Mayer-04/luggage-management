@@ -17,7 +17,7 @@ public class InteractiveQueue {
      * Válida que el elemento no esté vacío ni sea solo espacios.
      */
     public void enqueue() {
-        System.out.print("Ingrese un elemento: ");
+        System.out.print("Elemento: ");
         String element = scanner.nextLine();
 
         if (element == null || element.trim().isEmpty()) {

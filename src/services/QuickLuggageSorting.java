@@ -3,10 +3,35 @@ package services;
 import datastructures.list.List;
 import domain.Equipaje;
 
+/**
+ * La clase {@code QuickLuggageSorting} implementa el algoritmo de
+ * ordenamiento <strong>QuickSort</strong> para organizar equipajes en función de
+ * la categoría del tiquete.
+ * Las categorías se convierten en prioridades numéricas:
+ * <ul>
+ *   <li>{@code "L"} → 3 (alta prioridad)</li>
+ *   <li>{@code "M"} → 2 (media prioridad)</li>
+ *   <li>{@code "S"} → 1 (baja prioridad)</li>
+ *   <li>Cualquier otra → 0</li>
+ * </ul>
+ * <p>
+ * El orden resultante de la {@link List} coloca primero los equipajes
+ * con menor prioridad numérica.
+ *
+ * @see Equipaje
+ * @see List
+ */
 public class QuickLuggageSorting {
 
-    private static int prioridad(Equipaje maleta) {
-        String categoriaTiquete = maleta.categoriaTiquete();
+    /**
+     * Determina la prioridad numérica de un {@link Equipaje} en función
+     * de su categoría de tiquete.
+     *
+     * @param equipaje equipaje a evaluar
+     * @return número que representa la prioridad
+     */
+    private static int prioridad(Equipaje equipaje) {
+        String categoriaTiquete = equipaje.categoriaTiquete();
         return switch (categoriaTiquete) {
             case "L" -> 3;
             case "M" -> 2;
@@ -16,8 +41,11 @@ public class QuickLuggageSorting {
     }
 
     /**
-     * Método público para ordenar una lista de equipajes usando QuickSort.
-     * El usuario solo pasa la lista; los índices se manejan internamente.
+     * Ordena una {@link List} de {@link Equipaje} utilizando el algoritmo QuickSort.
+     * El usuario solo debe pasar la lista, ya que los índices se manejan internamente.
+     *
+     * @param lista lista de equipajes a ordenar
+     * @see #quickSort(List, int, int)
      */
     public static void quickSort(List<Equipaje> lista) {
         if (lista == null || lista.isEmpty()) return;
@@ -25,7 +53,12 @@ public class QuickLuggageSorting {
     }
 
     /**
-     * Implementación recursiva de QuickSort.
+     * Implementación recursiva del algoritmo QuickSort para ordenar
+     * una {@link List} de {@link Equipaje}.
+     *
+     * @param lista  lista de equipajes a ordenar
+     * @param inicio índice inicial de la partición
+     * @param fin    índice final de la partición
      */
     private static void quickSort(List<Equipaje> lista, int inicio, int fin) {
         if (inicio < fin) {
