@@ -2,8 +2,14 @@ import services.InterfazGestorEquipaje;
 
 import java.util.Scanner;
 
+/**
+ * Este es el punto de entrada de la aplicación, donde la aplicación ejecuta todo el código.
+ */
 public class Main {
 
+    /**
+     * Cadena de texto <em>(text block)</em> que indica cuáles son las opciones disponibles del menú.
+     */
     private static final String MENU = """
             Seleccione una opción:
             ----------------------

@@ -69,7 +69,7 @@ public class InterfazGestorEquipaje {
 
         if (!destinoValido) {
             System.out.println("Destino inválido.");
-            System.out.println("Verifica que esté escrito exactamente igual a los destinos dados o que sea correcto.\n");
+            System.out.println("Verifica que esté escrito exactamente igual a los destinos dados.\n");
             return null;
         }
 
@@ -103,7 +103,7 @@ public class InterfazGestorEquipaje {
         Equipaje equipaje = obtenerEquipaje();
 
         if (equipaje == null) {
-            System.out.println("No se pudo registrar el equipaje.\n");
+            System.out.println("No se pudo registrar el equipaje.");
             return;
         }
 
@@ -196,7 +196,7 @@ public class InterfazGestorEquipaje {
 
         Validacion.mostrarResumenNoAbordadas(noAbordados);
 
-        System.out.println("\nResumen de equipajes abordados por vuelo:");
+        System.out.println("Resumen de equipajes abordados por vuelo:");
         for (BodegaAvion vuelo : gestor.getBodegasAvion()) {
             int totalEquipajes = vuelo.size();
             System.out.printf("✈️ Vuelo destino: %s | Equipajes abordados: %d%n",
@@ -240,7 +240,7 @@ public class InterfazGestorEquipaje {
                     vuelo.getDestino(), stats[0], stats[1]);
         }
 
-        System.out.println("\n✅ Todos los vuelos han desembarcado. Los pasajeros han llegado a su destino correspondiente.\n");
+        System.out.println("✅ Todos los vuelos han desembarcado. Los pasajeros han llegado a su destino correspondiente.\n");
     }
 
     /**
