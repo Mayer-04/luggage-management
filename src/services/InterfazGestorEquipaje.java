@@ -69,7 +69,7 @@ public class InterfazGestorEquipaje {
 
         if (!destinoValido) {
             System.out.println("Destino inválido.");
-            System.out.println("Verifica que esté escrito exactamente igual a los destinos dados.\n");
+            System.out.println("Verifica que esté escrito exactamente igual a los destinos dados.");
             return null;
         }
 
@@ -77,7 +77,7 @@ public class InterfazGestorEquipaje {
         String categoriaTiquete = scanner.nextLine().trim().toUpperCase();
 
         if (!Validacion.esCategoriaValida(categoriaTiquete)) {
-            System.out.println("Categoría de tiquete inválida.\n");
+            System.out.println("Categoría de tiquete inválida.");
             return null;
         }
 
@@ -86,7 +86,7 @@ public class InterfazGestorEquipaje {
         try {
             peso = Integer.parseInt(scanner.nextLine().trim());
         } catch (NumberFormatException e) {
-            System.out.println("Peso inválido.\n");
+            System.out.println("Peso inválido.");
             return null;
         }
 
