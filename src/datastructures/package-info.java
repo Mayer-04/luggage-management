@@ -101,17 +101,6 @@
  * }
  * }</pre>
  *
- * <h2>Rendimiento y Complejidad</h2>
- * <p>
- * Las implementaciones están optimizadas para casos de uso comunes:
- * </p>
- * <ul>
- *     <li><strong>Acceso por índice:</strong> O(1) en List</li>
- *     <li><strong>Inserción al final:</strong> O(1) amortizado en todas las estructuras</li>
- *     <li><strong>Redimensionamiento:</strong> Se duplica la capacidad cuando está llena</li>
- *     <li><strong>Búsqueda lineal:</strong> O(n) en contains() y indexOf()</li>
- * </ul>
- *
  * <h2>Consideraciones de Memoria</h2>
  * <p>
  * Todas las estructuras utilizan arreglos dinámicos que:

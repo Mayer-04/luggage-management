@@ -1,10 +1,29 @@
 package datastructures.list;
 
+/**
+ * Implementación especializada de una lista que almacena exclusivamente
+ * cadenas de texto ({@link String}), basada en un arreglo dinámico.
+ * <p>
+ * La lista permite insertar, modificar, buscar, obtener y eliminar elementos
+ * en posiciones específicas. Al eliminar elementos, la estructura se ajusta
+ * automáticamente para mantener la continuidad de los datos.
+ * </p>
+ *
+ * <p>
+ * A diferencia de {@link datastructures.list.List}, esta implementación
+ * no es genérica y está optimizada para trabajar solo con cadenas.
+ * </p>
+ */
 public class ListOfStrings {
 
     private String[] elementos;
     private int contador;
 
+    /**
+     * Crea una lista vacía con la capacidad inicial indicada.
+     *
+     * @param capacidad el tamaño inicial del arreglo interno
+     */
     public ListOfStrings(int capacidad) {
         elementos = new String[capacidad];
         contador = 0;
@@ -212,7 +231,7 @@ public class ListOfStrings {
     }
 
     /**
-     * Modifica un elemento de la lista en la posición indicada.
+     * Modifica el valor de un elemento en la posición indicada.
      *
      * @param indice   el índice del elemento a modificar
      * @param elemento el nuevo valor del elemento
@@ -232,8 +251,11 @@ public class ListOfStrings {
 
     /**
      * Devuelve una representación en cadena de la lista.
+     * <p>
+     * Las cadenas se muestran en orden de inserción, separadas por comas.
+     * </p>
      *
-     * @return una cadena que representa la lista y su total de elementos
+     * @return una cadena que representa la lista
      */
     @Override
     public String toString() {
