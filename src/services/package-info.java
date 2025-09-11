@@ -1,62 +1,34 @@
 /**
- * Este paquete contiene las clases de servicio que gestionan la lógica operativa,
- * el procesamiento de datos, las utilidades y la interacción del sistema de transporte de equipaje.
- * <p>
- * Las funcionalidades clave incluyen:
+ * Este paquete agrupa los servicios principales del sistema de gestión de equipaje.
+ *
+ * <p>Su objetivo es coordinar el flujo completo del equipaje, desde que el pasajero lo registra
+ * hasta que llega a su destino final. Las clases incluidas proporcionan tanto lógica de negocio
+ * como utilidades de organización y validación.</p>
+ *
+ * <p>Entre sus responsabilidades se encuentran:</p>
  * <ul>
- *   <li>{@link services.Bodegas} Distribuye equipajes desde una {@link domain.ColaGeneral} hacia las {@link domain.Bodega} correspondientes según destino.
- *       <br>Método principal: {@code procesarEquipaje(ColaGeneral, Bodega[])}
- *       <br><pre>{@code
- * Bodegas.procesarEquipaje(colaGeneral, bodegas);
- * }</pre></li>
- *
- *   <li>{@link services.Avion}  Organiza y carga equipajes en vuelos, respetando restricciones por categoría de tiquete.
- *       <br>Métodos principales: {@code abordarVuelo(Bodega[], BodegaAvion[])}, {@code desembarcarVuelo(BodegaAvion[])}
- *       <br><pre>{@code
- * List<Equipaje> noAbordados = Avion.abordarVuelo(bodegas, vuelos);
- * List<int[]> stats = Avion.desembarcarVuelo(vuelos);
- * }</pre></li>
- *
- *   <li>{@link services.Estadisticas} Genera estadísticas y muestra la lista de pasajeros por vuelo.
- *       <br>Métodos principales: {@code mostrarEstadisticas(BodegaAvion[])}, {@code mostrarListaDePasajeros(BodegaAvion[])}
- *       <br><pre>{@code
- * Estadisticas.mostrarEstadisticas(vuelos);
- * Estadisticas.mostrarListaDePasajeros(vuelos);
- * }</pre></li>
- *
- *   <li>{@link services.InventarioEquipaje}  Controla el inventario por categoría de equipaje en cada vuelo.
- *       <br>Métodos principales: {@code hayCupoPara(String)}, {@code incrementarContadores(String)}, {@code getTotal()}
- *       <br><pre>{@code
- * if (inventario.hayCupoPara("L")) {
- *     inventario.incrementarContadores("L");
- * }
- * }</pre></li>
- *
- *   <li>{@link services.QuickLuggageSorting}  Ordena listas de equipajes por prioridad de tiquete usando el algoritmo QuickSort.
- *       <br>Método principal: {@code quickSort(List<Equipaje>)}
- *       <br><pre>{@code
- * QuickLuggageSorting.quickSort(listaEquipajes);
- * }</pre></li>
- *
- *   <li>{@link services.ColeccionBodegas}  Inicializa colecciones de bodegas y bodegas de avión a partir de los destinos definidos en {@link util.Constantes}.
- *       <br>Métodos principales: {@code obtenerBodegasDeEntrada()}, {@code obtenerBodegasDeAviones()}
- *       <br><pre>{@code
- * Bodega[] bodegas = ColeccionBodegas.obtenerBodegasDeEntrada();
- * BodegaAvion[] vuelos = ColeccionBodegas.obtenerBodegasDeAviones();
- * }</pre></li>
- *
- *   <li>{@link services.InterfazGestorEquipaje}  Proporciona una interfaz de consola para registrar, procesar, abordar y desembarcar equipajes.
- *       <br>Métodos principales: {@code registrarEquipaje()}, {@code procesarEquipajes()}, {@code abordarVuelo()}, {@code desembarcarVuelo()}
- *       <br><pre>{@code
- * interfaz.registrarEquipaje();
- * interfaz.procesarEquipajes();
- * interfaz.abordarVuelo();
- * interfaz.desembarcarVuelo();
- * }</pre></li>
+ *   <li>Registrar y almacenar equipajes en una {@link domain.ColaGeneral} de espera.</li>
+ *   <li>Clasificar los equipajes en {@link domain.Bodega}s según destino.</li>
+ *   <li>Gestionar la carga y descarga de equipajes en {@link domain.BodegaAvion}s asociadas a vuelos.</li>
+ *   <li>Aplicar algoritmos de ordenamiento (p. ej., {@link services.QuickLuggageSorting}) para priorizar maletas por categoría de tiquete.</li>
+ *   <li>Controlar inventarios y restricciones de capacidad mediante {@link services.InventarioEquipaje}.</li>
+ *   <li>Ofrecer estadísticas y reportes finales a través de clases auxiliares.</li>
+ *   <li>Facilitar la interacción con el usuario mediante la interfaz de consola {@link services.InterfazGestorEquipaje}.</li>
  * </ul>
- * <p>
- * Estas clases interactúan con el modelo del paquete {@code domain}, estructuras de datos personalizadas en {@code datastructures},
- * y constantes definidas en {@code util}, promoviendo una arquitectura modular, clara y extensible.
+ *
+ * <p>Clases destacadas dentro del paquete:</p>
+ * <ul>
+ *   <li>{@link services.GestorEquipaje}: servicio central que administra todo el ciclo de vida del equipaje.</li>
+ *   <li>{@link services.Bodegas}: gestiona la distribución de equipajes en bodegas de entrada.</li>
+ *   <li>{@link services.Avion}: coordina el abordaje y desembarque de los vuelos.</li>
+ *   <li>{@link services.InventarioEquipaje}: controla límites y cupos de equipajes en bodegas de avión.</li>
+ *   <li>{@link services.QuickLuggageSorting}: implementa el algoritmo QuickSort para ordenar maletas según prioridad.</li>
+ *   <li>{@link services.InterfazGestorEquipaje}: capa de interfaz que conecta al usuario con el sistema.</li>
+ * </ul>
+ *
+ * <p>En conjunto, este paquete constituye el núcleo de la lógica del sistema,
+ * integrando las estructuras de datos del paquete {@code domain} con reglas
+ * de negocio y procesos logísticos.</p>
  */
 
 package services;
